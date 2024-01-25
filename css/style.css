@@ -101,13 +101,39 @@ pre {
   line-height: 1;
 }
 
-td {
-  font-size: 0.8em;
+.span-paragraph span {
+  margin-bottom: 1em;
 }
 
-td:first-child {
-  padding-right: 20px;
+table {
+  margin-bottom: 1em;
+  border-collapse: collapse;
+}
+
+thead tr:first-child th {
+  padding-bottom: 0.75em;
+  border: none;
+}
+
+th {
+  text-align: center;
+}
+
+td {
   text-align: right;
+}
+
+th, td {
+  padding: 0.25em 1em;
+  border: 1px solid black;
+}
+
+.borderless {
+  border: none;
+}
+
+.borderless * {
+  border: none;
 }
 
 #footer {
@@ -143,6 +169,10 @@ td:first-child {
   justify-content: space-around;
 }
 
+.flex > .center {
+  margin: auto;
+}
+
 .flex > .align_bottom {
   margin-top: auto;
 }
@@ -173,6 +203,18 @@ td:first-child {
 
 .text-center {
   text-align: center;
+}
+
+.text.center {
+  text-align: center;
+}
+
+.text.left {
+  text-align: left;
+}
+
+.text.right {
+  text-align: right;
 }
 
 #header {

@@ -133,7 +133,7 @@
 <div class="flex content-block lite around">
 	<div>
 		<h2 class="text-center">CHAIN SPEC</h2>
-		<table>
+		<table class="borderless">
 			<tr><td>COIN UNIT</td><td>1 WART</td></tr>
 			<tr><td>BLOCK TIME</td><td>20 SECONDS</td></tr>
 			<tr><td>REWARD</td><td>3 WART</td></tr>
@@ -166,7 +166,7 @@
 	<pre>
 ./wart-node
 
-[info] Warthog Node v0.1.17
+[info] Warthog Node v0.1.19
 [info] Chain database: /path/to/Warthog/chain.db3
 [info] Peers database: /path/to/Warthog/peers.db3
 [info] 0 IPs are currently blacklisted.
@@ -274,6 +274,181 @@ Using 16 CPU threads for Verushash
 	<span>At the moment, the pool is under development, you can follow the development in more detail in <a href="https://discord.com/invite/QMDV8bGTdQ" target="_blank">Discord</a></span>
 </div>
 </div>
+			<div data-block="algo" hidden>
+
+</div>
+
+			<div data-block="whitelist" hidden>
+<div class="content-block flex column span-paragraph">
+	<h1>Warthog - An experimental fresh rewrite of a PoW cryptocurrency</h1>
+	<div class="flex around">
+		<h2>Pumbaa</h2>
+		<h2>Rafiki</h2>
+	</div>
+	<h2 class="text-center">October 5, 2023</h2>
+	<h3>Abstract</h3>
+	<span>This white paper is a work in progress.</span>
+	<h2>1. Introduction and Project goals</h2>
+	<span>Warthog is a classical Proof-of-Work (PoW) based cryptocurrency which is meant to be a fun and experimental side project of its developers Pumbaa, Timon and Rafiki who work in blockchain industry.</span>
+	<span>We are working on Warthog in our free time and there is always the risk that we leave due to time constraints or personal reasons. In fact our colleague Timon has already left the team. Therefore we are trying to build up a strong community backing the project.</span>
+	<span>Mainly one can describe this project as an experiment to try out new things and learn how blockchain technology works in detail. But at the same time we want to be as transparent and fair as possible and avoid as much as possible fishy and questionable practice currently seen in most other new projects.</span>
+	<span>The code is freshly written in C++20 and is not a cheap fork of any other project. Therefore there is always the risk of serious or unfixable bugs. But at the same time there is real effort put into this project which sets it apart from most competitors.</span>
+	<span>The community is welcome to take actively part in the evolution of Warthog, the logo and the explorer are made by volunteers and also possible choices for a mining algorithm are proposed. The connection with the community shall be preserved and extended in the future. If you want to join, please do so!</span>
+	<span>There is no specific purpose or use case of Warthog. However we want to revive the days when crypto was a fun and an interesting experimental thing. One of our experiments with this project is to use SQLite to store blocks and state. Another is the completely novel idea of syncing nodes via *chain descriptors* instead of asking other nodes for blocks by their hashes.</span>
+	<span>One design principle of Warthog is fast sync speed and a low impact on system resources which is achieved by the use of fast hashing algorithms, appropriate data structures and our custom-built sync algorithm.</span>
+	<span>For now and in the near future the primary plan is to make the node implemen- tation more robust and improve infrastructure like explorer and API for better interoperability.</span>
+
+	<h2>2. Technical Details</h2>
+	<h3>2.1 Retarget Logic</h3>
+	<span>Similarly to Bitcoin, the warthog blockchain will scale its difficulty periodically to adjust for changing hashrate. Changes in difficulty is partitioned into two phases: - In the initial phase the difficulty is adjusted every 720 blocks which corresponds to approximately 4 hours. - In the second phase the difficulty is adjusted every 8640 blocks which corresponds to 2 days.</span>
+	<span>The reason for this two-phase approach is the high variability of hashrate in early stages of a project’s life which initially requires a more frequent difficulty adjustment. On the other hand too short intervals also have disadvantages such as the tendency to oscillate and a possibly higher impact of faked timestamps. Therefore the second phase stretches the difficulty adjustment interval after the initial phase.</span>
+	<span>While in Bitcoin the difficulty change is capped by factor 4, we have implemented a factor 2 cap because our difficulty adjustment is more frequent than 2 weeks.</span>
+
+	<h3>2.2 Emission Scheme</h3>
+	<span>Warthog was started without any premined or reserved amount of coins on June 29, 2023. The project implements a classical halving-based emission scheme with halvings occurring every 3153600 blocks (every 2 years). The emission for the next 4 years is summarized in the following table:</span>
+	<div class="center">
+		<table>
+			<thead>
+				<tr><th colspan="3">Table 1: Emission overview</th></tr>
+				<tr><th>Date</th><th>Lifetime</th><th>% of total supply in circulation</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>June 29 2023</td><td>0 years</td><td>0%</td></tr>
+				<tr><td>June 29 2024</td><td>1 years</td><td>25%</td></tr>
+				<tr><td>June 29 2025</td><td>2 years</td><td>50%</td></tr>
+				<tr><td>June 29 2026</td><td>3 years</td><td>62.5%</td></tr>
+				<tr><td>June 29 2027</td><td>4 years</td><td>75%</td></tr>
+			</tbody>
+		</table>
+	</div>
+	<span>There is no tail emission which means there is a hard cap of the amount in circulation. The hard cap is 18921599.68464 WART (around 19 million coins).</span>
+	<span>Before halving occurs every block yields 3 WART as miner reward. Since the block time is 20 seconds, every day approximately 60/20 * 60 * 24 = 4320 blocks and 12960 WART are mined before halving.</span>
+
+	<h3>2.3 Coin Precision</h3>
+	<span>The reference implementation uses the C++ data type uint64_t for storing amounts of WART. This is a 64 bit unsigned integer. To represent fractions of a coin these values are interpreted in fixed point arithmetic with 8 digits precision. This means that 1 WART is internally represented as uint64_t number with value 100000000. The smallest representable step is 0.00000001 WART and represented as uint64_t number with value 1.</span>
+	<span>For easier integration all API endpoints return both, the WART amount as a string (like “"amount": "12.0"”), and the internal integer representation indicated with label “E8” (like “"amountE8": 1200000000”).</span>
+
+	<h3>2.4 One-of-a-kind chain descriptor based sync</h3>
+	<span>This project is an experiment where the developers try out new things and push the boundary of what is possible in blockchain technology. We invented a completely unique and new way of syncing nodes which is not presently not known to the industry.</span>
+	<span>Traditionally during synchronization new nodes request block bodies identified by block hashes. The replying node has to look up the block body based on the hash and then sends it back.</span>
+	<span>In contrast we have invented a node communication protocol which works with- out block hashes for block body lookup. In our setup nodes keep track on fork heights with other nodes. A *chain descriptor* is used to identify a specific chain on the peer. When a node appends to its chain, the chain descriptor remains unchanged, however the current chain descriptor is increased when the consensus chain switches to a longer fork. Block bodies for previous chains are also kept for some time in case a peer requests them.</span>
+	<span>When syncing nodes request block bodies identified by a chain descriptor and a block range. This way we avoid overhead in communication and lookup.</span>
+
+	<h3>2.5 SQLite backed block store</h3>
+	<span>SQLite is a battle-proven and well-established embedded SQL database engine. Warthog nodes use SQLite as their main storage engine for both, blocks and state. Nodes also index transactions and can provide basic blockchain explorer functionality directly via API thanks to SQLite.</span>
+	<span>SQLite databases are also portable across 32-bit and 64-bit machines and be- tween big-endian and little-endian architectures such that chain snapshots can easily shared. Furthermore SQLite supports transactions which are essential for data integrity even in case of a power outage or node crash.</span>
+	<span>The default SQLite database file name used for the chain is chain.db3 and can be configured via the --chain-db command line option</span>
+
+	<h3>2.6 Account based architecture</h3>
+	<span>Warthog implements an account based architecture. This is similar to Ethereum and different from Bitcoin’s UTXO model. Every account along with its balance is stored in the state table of the chain database. For efficiency reasons accounts are referred by their id: Every account is assigned a unique auto-incremented id value on first use. This makes blocks more space-efficient since a block id only requires 8 bytes of storage whereas an address would require 20 bytes.</span>
+
+	<h3>2.7 Anatomy of a block</h3>
+	<span>The binary content of a block is a concatenation of the following sections in their specified order:</span>
+	<ol type="1">
+		<li>Mining section</li>
+		<li>New address section</li>
+		<li>Reward section</li>
+		<li>Transfer section</li>
+	</ol>
+	<span>Below we describe the above sections. All numbers and id values are in network byte order.</span>
+
+	<h3>2.7.1 Mining section</h3>
+	<span>This section allows miners to put 4 bytes of arbitrary data to affect the merkle hash as shown in Table 2</span>
+	<div class="center">
+		<table>
+			<thead>
+				<tr><th colspan="2">Table 2: Mining section section byte<br>structure byte range content</th></tr>
+				<tr><th>byte range</th><th>content</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>1-4</td><td>arbitrary data</td></tr>
+			</tbody>
+		</table>
+	</div>
+
+	<h3>2.7.2 New address section</h3>
+	<span>This section lists new addresses that receive payments in this block and therefore need to be added to the state table. This way they will be assigned a new id value which is referenced in the other sections to specify a particular account. See Table 3.</span>
+	<div class="center">
+		<table>
+			<thead>
+				<tr><th colspan="2">Table 3: New address section byte structure</th></tr>
+				<tr><th>byte range</th><th>content</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>1-4</td><td>number n of new addresses</td></tr>
+				<tr><td>5-(4+n*20)</td><td>n addressess of 20 bytes each</td></tr>
+			</tbody>
+		</table>
+	</div>
+	<span>Miners are responsible to ensure that the addresses appearing in the new address section are <b>not already present in the state table</b> and are <b>actually referenced in this block</b>. Otherwise the block is considered invalid.</span>
+
+	<h3>2.7.3 Reward section</h3>
+	<span>Mining reward is distributed to at least one reward address consisting of 16 bytes each, see Tables 4 and 5</span>
+	<div class="center">
+		<table>
+			<thead>
+				<tr><th colspan="2">Table 4: Reward section byte structure</th></tr>
+				<tr><th>byte range</th><th>content</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>1-2</td><td>number r of reward entry</td></tr>
+				<tr><td>3-(4+r*16)</td><td>r reward entries</td></tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="center">
+		<table>
+			<thead>
+				<tr><th colspan="2">Table 5: Reward element byte<br>structure byte range content</th></tr>
+				<tr><th>byte range</th><th>content</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>1-8</td><td>accountId</td></tr>
+				<tr><td>9-18</td><td>amount</td></tr>
+			</tbody>
+		</table>
+	</div>
+	<span>The sum of the amounts received by the addresses listed in the mining reward section must not exceed the total mining reward (block reward + transaction fees), otherwise the block is considered invalid.</span>
+	<span>The total size of the mining section is 2 + r ∗ 16 bytes.</span>
+
+	<h3>2.7.4 Transfer section</h3>
+	<span>The transfer section contains the transfers made in this block. Its binary outline is specified in Tables 6 and 7.</span>
+	<span>Each payment entry has length 99 bytes. Compare this to the average transaction size of around 200 bytes per Bitcoin transfer.</span>
+
+	<h3>2.8 Fee specification</h3>
+	<span>For efficiency and compactness transaction fees are encoded as 2-byte floating-point numbers (16 bits), where the first 6 bits encode the exponent and the remaining 10 bits encode a 11 bit mantissa starting with an implicit 1. This means that fee values cannot be 0 and are of lower precision than regular amount</span>
+	<div class="center">
+		<table>
+			<thead>
+				<tr><th colspan="2">Table 6: Transfer section byte structure</th></tr>
+				<tr><th>byte range</th><th>content</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>1-4</td><td>number t of transfer entries</td></tr>
+				<tr><td>5-(4+t*99)</td><td>t transfer entries, see Table 7</td></tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="center">
+		<table>
+			<thead >
+				<tr><th colspan="2">Table 7: byte range</th></tr>
+				<tr><th>byte range</th><th>content</th></tr>
+			</thead>
+			<tbody>
+				<tr><td>1-8</td><td>fromAccountId</td></tr>
+				<tr><td>9-16</td><td>pinNonce</td></tr>
+				<tr><td>17-18</td><td>fee</td></tr>
+				<tr><td>19-26</td><td>toAccountId</td></tr>
+				<tr><td>27-34</td><td>amount</td></tr>
+				<tr><td>35-99</td><td>recoverable signature (65 bytes)</td></tr>
+			</tbody>
+		</table>
+	</div>
+	<span>values which use 4 bytes. A fee of value of 0 specified on transaction generation will automatically transform into the minimal fee value of 0.0000001 WART.</span>
+</div>
+</div>
+
 			<div data-block="faqs" hidden>
 
 </div>
