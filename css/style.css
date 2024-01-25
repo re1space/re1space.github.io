@@ -1,0 +1,298 @@
+a {
+  color: #FDAC12;
+}
+
+code {
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+}
+
+pre {
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+#wrapper {
+  width: 100%;
+  color: #000;
+  background-color: #E9E9E9;
+}
+
+#content {
+  padding-top: 2rem;
+}
+
+.content-block {
+  width: 1350px;
+  font-size: 1.5em;
+  margin: auto;
+  padding: 1em 0;
+  text-align: justify;
+}
+
+[data-block=main] {
+  font-size: 1.2em;
+}
+
+.content-block.right div {
+  padding-left: 4rem;
+}
+
+.content-block.left div {
+  padding-right: 4rem;
+}
+
+.content-block h1 {
+  text-align: center;
+}
+
+.content-block.lite {
+  font-size: 1.5rem;
+}
+
+.key-facts__list {
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 0.7rem;
+}
+
+.key-facts__list-item {
+  width: calc(33.3333333333% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: solid 1px #000;
+  border-radius: 10px;
+  background-color: #FFF;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.key-facts__list-item div {
+  margin-left: 20px;
+  word-wrap: normal;
+}
+
+.key-facts__list-item h3 {
+  margin: 0.5rem 0;
+}
+
+.text-icon {
+  margin: auto 15px;
+  font-size: 3rem;
+}
+
+.check-list {
+  list-style: none;
+}
+
+.check-list li {
+  list-style-image: url("/img/checkbox.svg");
+}
+
+.check-list li.check {
+  list-style-image: url("/img/checkbox-check.svg");
+}
+
+.check-list li::marker {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+td {
+  font-size: 0.8em;
+}
+
+td:first-child {
+  padding-right: 20px;
+  text-align: right;
+}
+
+#footer {
+  width: 100%;
+  padding: 30px 0;
+  color: #000;
+  background-color: #FFF;
+}
+
+#footer span {
+  margin: auto;
+}
+
+.button {
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px 50px;
+  color: #000;
+  background-color: #FDAC12;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.column {
+  flex-direction: column;
+}
+
+.flex.around {
+  justify-content: space-around;
+}
+
+.flex > .align_bottom {
+  margin-top: auto;
+}
+
+.flex > .align_center {
+  margin: auto;
+}
+
+.w_20 {
+  width: 20%;
+}
+
+.w_30 {
+  width: 30%;
+}
+
+.m_l_0 {
+  margin-left: 0;
+}
+
+.p_t_15_em {
+  padding-top: 1.5em;
+}
+
+.shadow {
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(242, 5, 68, 0.7);
+}
+
+.text-center {
+  text-align: center;
+}
+
+#header {
+  height: 120px;
+  padding: 10px;
+  justify-content: space-between;
+  color: #FFF;
+  background-color: #000;
+}
+
+#header > img {
+  height: 100%;
+  margin: auto 2em;
+  padding: 5px 0;
+}
+
+#header ul {
+  list-style: none;
+}
+
+#header li {
+  margin: auto 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+  overflow: hidden;
+}
+
+#header label,
+#header a {
+  color: #FDB913;
+  cursor: pointer;
+}
+
+#header input[type=radio] {
+  display: none;
+}
+
+#header li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: #FDB913;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+#header li::after {
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+}
+
+#header li:hover::after,
+#header li:focus::after,
+#header li:has(input[type=radio]:checked)::after {
+  transform: translate3d(0, 0, 0);
+}
+
+#wrapper:has(#menu-item__main:checked) [data-block=main] {
+  display: block;
+}
+
+#wrapper:has(#menu-item__get-start:checked) [data-block=get-start] {
+  display: block;
+}
+
+#wrapper:has(#menu-item__algo:checked) [data-block=algo] {
+  display: block;
+}
+
+#wrapper:has(#menu-item__whitelist:checked) [data-block=whitelist] {
+  display: block;
+}
+
+#wrapper:has(#menu-item__faqs:checked) [data-block=faqs] {
+  display: block;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #E9E9E9;
+  font-family: "Montserrat-Lite", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2 {
+  font-family: "Montserrat-Bold";
+}
+
+h3 {
+  font-family: "Montserrat-Medium";
+}
+
+[hidden] {
+  display: none;
+}
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/fonts/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Lite";
+  src: url("/fonts/Montserrat-Light.ttf");
+}
