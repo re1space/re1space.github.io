@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+	<title>Warthog Network</title>
+	<link href="./css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="wrapper" class="flex column">
+		<nav id="header" class="flex">
+			<img src="./img/main_logo.png">
+			<ul class="flex">
+				<li>
+					<input type="radio" id="menu-item__main" name="menu" checked>
+					<label for="menu-item__main">MAIN</label>
+				</li>
+				<li>
+					<input type="radio" id="menu-item__get-start" name="menu" checked>
+					<label for="menu-item__get-start">GET START</label>
+				</li>
+				<li>
+					<input type="radio" id="menu-item__algo" name="menu">
+					<label for="menu-item__algo">ALGORITHM</label>
+				</li>
+				<li>
+					<input type="radio" id="menu-item__whitelist" name="menu">
+					<label for="menu-item__whitelist">WHITELIST</label>
+				</li>
+				<li>
+					<input type="radio" id="menu-item__faqs" name="menu">
+					<label for="menu-item__faqs">FAQs</label>
+				</li>
+				<li><a href="https://wart.0xf10.com" target="_blank">EXPLORER</a></li>
+				<li><a href="https://github.com/warthog-network" target="_blank"><img src="/img/github.svg" width="35px"></a></li>
+				<li><a href="https://discord.com/invite/QMDV8bGTdQ" target="_blank"><img src="/img/discord.svg" width="35px"></a></li>
+				<li><a href="https://t.me/warthognetwork" target="_blank"><img src="/img/telegram.svg" width="35px"></a></li>
+				<li><a href="https://twitter.com/warthognetwork" target="_blank"><img src="/img/twitter.svg" width="35px"></a></li>
+			</ul>
+			<!-- <div id="header-links" class="flex">
+				
+				<a href="#main">MAIN</a>
+				<a href="https://wart.0xf10.com">GET START</a>
+				
+				<a href="https://github.com/CoinFuMasterShifu/ProofOfBalancedWork/blob/main/PoBW.pdf">ALGORITHM</a>
+				<a href="https://github.com/warthog-network/whitepaper/blob/master/whitepaper.md">WHITELIST</a>
+				<a href="#faqs">FAQs</a>
+				<a href="https://github.com/warthog-network"><img src="/img/github.svg" width="35px"></a>
+				<a href="https://discord.com/invite/QMDV8bGTdQ"><img src="/img/discord.svg" width="35px"></a>
+				<a href="https://t.me/warthognetwork"><img src="/img/telegram.svg" width="35px"></a>
+				<a href="https://twitter.com/warthognetwork"><img src="/img/twitter.svg" width="35px"></a>
+			</div> -->
+		</nav>
+		<div id="content" class="flex column">
+			<div data-block="main" hidden>
+<div class="flex content-block right">
+	<img src="./img/logo.png" class="align_center" width="400px">
+	<div>
+		<h1>WHAT IS WARTHOG?</h1>
+		<span>Warthog is an experimental cryptocurrency with world's first <b class="shadow">Proof of Balanced Work</b> algorithm written by a group of crypto enthusiasts. This project is goes to be serious and everyone is welcome to join and contribute. Who knows how big this project will be?</span>
+	</div>
+</div>
+<div class="content-block flex left">
+	<div>
+		<h1>TOKENOMICS</h1>
+		<span>This is not the default kind of project where you see a disproportionately high allocation of the total supply unfairly reserved for the team, the advisors and their pockets. 0% is minted, premined, reserved for anyone, 100% is publicly mineable.</span>
+	</div>
+	<img src="/img/tokenomics.png" class="align_bottom" width="300px">
+</div>
+<div class="content-block">
+	<h1>KEY FACTS</h1>
+	<span>Remember the time when crypto was interesting and fun? We want to bring this golden age of crypto back to life.</span>
+	<div class="flex key-facts__list">
+		<div class="flex key-facts__list-item m_l_0">
+			<span class="text-icon">👍</span>
+			<div>
+				<h3>No Premine</h3>
+				<span>Project was fairly launched on Bitcointalk</span>
+			</div>
+		</div>
+		<div class="flex key-facts__list-item">
+			<span class="text-icon">🤟</span>
+			<div>
+				<h3>No "Team/Dev" fund</h3>
+				<span>No unfair allocation to anybody aka "team"/"development" funds</span>
+			</div>
+		</div>
+		<div class="flex key-facts__list-item">
+			<span class="text-icon">😊</span>
+			<div>
+				<h3>100% mineable</h3>
+				<span>100% of supply is publicly mineable, no coins were minted</span>
+			</div>
+		</div>
+		<div class="flex key-facts__list-item m_l_0">
+			<span class="text-icon">👑</span>
+			<div>
+				<h3>Written from scratch</h3>
+				<span>This project is NOT a fork/copy of anything else</span>
+			</div>
+		</div>
+		<div class="flex key-facts__list-item">
+			<span class="text-icon">✨</span>
+			<div>
+				<h3>Modern Codebase</h3>
+				<span>Using modern C++20 and tools like clangd, meson, ninja</span>
+			</div>
+		</div>
+		<div class="flex key-facts__list-item">
+			<span class="text-icon">🫵</span>
+			<div>
+				<h3>Open Source</h3>
+				<span>You are welcome to contribute</span>
+			</div>
+		</div>
+		<div class="flex key-facts__list-item">
+			<span class="text-icon">🔁</span>
+			<div>
+				<h3>Chain descriptor based sync</h3>
+				<span>Experimental new light-weight sync mechanism which requires less network communication and computational resources</span>
+			</div>
+		</div>
+		<div class="flex key-facts__list-item">
+			<span class="text-icon">⚡️</span>
+			<div>
+				<h3>Proof of Balanced Work</h3>
+				<span>The world's first algorithm using PoBW concept! Now power of CPU is also important!</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="flex content-block lite around">
+	<div>
+		<h2 class="text-center">CHAIN SPEC</h2>
+		<table>
+			<tr><td>COIN UNIT</td><td>1 WART</td></tr>
+			<tr><td>BLOCK TIME</td><td>20 SECONDS</td></tr>
+			<tr><td>REWARD</td><td>3 WART</td></tr>
+			<tr><td>PRECISION</td><td>0.00000001 WART (8 digits)</td></tr>
+			<tr><td>HALVING</td><td>~ EVERY 2 YEARS</td></tr>
+			<tr><td>SUPPLY</td><td>18921599.68464 (~19M) WART</td></tr>
+		</table>
+	</div>
+	<div>
+		<h2 class="text-center">ROAD MAP</h2>
+		<ul class="check-list">
+			<li class="check">Develop world's first PoBW algo</li>
+			<li>Develop stratum pool</li>
+			<li>Listing on Exbitron</li>
+			<li>Profit?</li>
+		</ul>
+	</div>
+</div>
+<div class="flex column content-block">
+	<h1>WANNA BUY?</h1>
+	<span>There is currently no listing on any exchange, but you can buy some WART on P2P thread on our Discord!</span>
+	<a class="button" href="https://discord.com/channels/1126486458698584107/1133081739816861716">BUY</a>
+</div>
+</div>
+
+			<div data-block="get-start" hidden>
+<div class="content-block">
+	<h2>NODE</h2>
+	<span>At the moment, for any actions on the Wartghot network, you need to run an instance of the node on your computer. Currently, the pre-compiled node executable file availabel for Windows, macOS (only arm), Linux (Ubuntu, Debian). You can download it from <a href="https://github.com/warthog-network/Warthog/releases" target="_blank">here</a>. Аfter launch, node will start synchronizing the blockchain, after it is completed, it will be possible to perform operations with the wallet and start mining.</span>
+	<pre>
+./wart-node
+
+[info] Warthog Node v0.1.17
+[info] Chain database: /path/to/Warthog/chain.db3
+[info] Peers database: /path/to/Warthog/peers.db3
+[info] 0 IPs are currently blacklisted.
+[info] Cache has 0 entries
+[info] Chain info: length 0, work 0
+[info] Chain snapshot not present
+[info] P2P endpoint is 0.0.0.0:9186.
+[info] RPC endpoint is 127.0.0.1:3000.
+[info] Connected to 1 peers
+[info] Connected to 14 peers
+[info] Syncing... (height 0 of 17280)</pre>
+</div>
+<div class="content-block">
+	<h2>WALLET</h2>
+	<span>To use a wallet, you need to download pre-compiled wallet executable file from <a href="https://github.com/warthog-network/Warthog/releases" target="_blank">here</a>. Currently support Windows, macOS (only arm), Linux (Ubuntu, Debian), but you can compile </span>
+	<h3>Create wallet</h3>
+	<span>To create the wallet you need just run next command:</span>
+	<br>
+	<pre>
+./wart-wallet -c</pre>
+	<span>In output you get wallet address, private and public keys. This information will be saved to the wallet.json file. </span>
+	<pre>
+Wallet file created.
+{
+   "address": "5fe016f874698e11f36a2b2f4dd759d53b55d5520c255e64",
+   "privateKey": "2cc2cbe28cb665d540c949aef5d1a3484a960740338780ec82a9ae1414bcc18a",
+   "publicKey": "0285a33afacea56262b44b8b96f4affa8f31cc51d3065eb37e43c0d0cf979a2872"
+}</pre>
+	<h3>Check balance</h3>
+	<span>If you want check your balance run command:</span>
+	<pre>
+./wart-wallet -b</pre>
+	<span>In output you get balance of your wallet</span>
+	<h3>Send coins</h3>
+	<span>To send some coins, use command:</span>
+	<pre>
+./wart-walet -s --to=%address% --amount %count% --fee 0</pre>
+	<pre>
+./wart-walet -s --to=9da0dc31d0c3bcaaeaf422be6499fbf451b314fa622be978 --amount 0.00000001 --fee 0</pre>
+	<span>Next, you will be shown the details of the transaction and if you agree with them, you need to confirm it</span>
+	<pre>
+Summary:
+   To:     9da0dc31d0c3bcaaeaf422be6499fbf451b314fa622be978
+   Fee:    0.00000001
+   Amount: 0.00000001
+   Nonce: 4262777042
+Confirm with "y": y</pre>
+	<span>And your transaction added to blockchain</span>
+	<pre>
+Get pin
+Got pin
+NonceId: 4262777042
+pinHeight: 896450
+pinHeight: 896450
+pinHash: 2452592e211a10b97da31e4b681aafe49b93321776580278b0c39fc5bae84558
+=====DEBUG INFO TRANSACTION JSON=====
+{
+   "amount": "0.00000001",
+   "fee": "0.00000001",
+   "nonceId": 4262777042,
+   "pinHeight": 896450,
+   "signature65": "53d429fa34ef05f9f413b4eb57...9c189ae3078894cb01aee91eda2201",
+   "toAddr": "9929fdce19b2a71cf0950263baa71478ef1980f8c7d9ccb3"
+}
+=====================================
+Transaction accepted.</pre>
+	<h3>Restore</h3>
+	<span>To restore your wallet.json file, you need run command:</span>
+	<pre>
+./wart-wallet -r %your private key%</pre>
+	<span>In output you get wallet address, private and public keys and </span>
+	<pre>
+./wart-wallet -r 2cc2cbe28cb665d540c949aef5d1a3484a960740338780ec82a9ae1414bcc18a
+Wallet file created.
+{
+   "address": "5fe016f874698e11f36a2b2f4dd759d53b55d5520c255e64",
+   "privateKey": "2cc2cbe28cb665d540c949aef5d1a3484a960740338780ec82a9ae1414bcc18a",
+   "publicKey": "0285a33afacea56262b44b8b96f4affa8f31cc51d3065eb37e43c0d0cf979a2872"
+}</pre>
+</div>
+<div class="content-block">
+	<h2>MINER</h2>
+	<span>To start mine this coin you need to download janusminer <a href="https://github.com/CoinFuMasterShifu/janusminer/releases" target="_blank">here</a>. Current stable version is <a href="https://github.com/CoinFuMasterShifu/janusminer/releases/tag/0.0.4" target="_blank">0.0.4</a>. Now miner have <b>ONLY Linux</b> support with OpenCL API.</span>
+	<pre>
+./janusminer -a %wallet% -h %host_ip% -p %node_port%
+
+./janusminer -a 5fe016f874698e11f36a2b2f4dd759d53b55d5520c255e64 -h 192.168.1.1 -p 3000
+Janushash Miner (By CoinFuMasterShifu) ⚒ ⛏
+[info] Node RPC is 192.168.1.1:3000
+OpenCL installations for the following GPUs were detected:
+[0]: NVIDIA GeForce RTX 4070
+Using all GPUs.
+Using 16 CPU threads for Verushash
+[warning] CPU queue drained
+[info] Total hashrate (GPU): 203.929200 mh/s
+[info]    NVIDIA GeForce RTX 4070: 203.929200 mh/s
+[info] Total hashrate (CPU): 16.734208 mh/s
+[info]    Thread#0: 940.485000 kh/s
+...
+[info]    Thread#15: 861.117000 kh/s
+[info] Janusscore: 72.634461 mh/s</pre>
+</div>
+<div class="content-block">
+	<h2>POOL</h2>
+	<span>At the moment, the pool is under development, you can follow the development in more detail in <a href="https://discord.com/invite/QMDV8bGTdQ" target="_blank">Discord</a></span>
+</div>
+</div>
+			<div data-block="faqs" hidden>
+
+</div>
+
+		</div>
+		<div id="footer" class="flex">
+			<span>
+				Copyright © WartHog 2024 Website Design by BiDone re. Logo by ????.
+			</span>
+		</div>
+	</div>
+	<script src="./js/script.js"></script>
+</body>
+</html>
