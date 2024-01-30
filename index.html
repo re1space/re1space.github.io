@@ -38,27 +38,14 @@
 				<li><a href="https://t.me/warthognetwork" target="_blank"><img src="/img/telegram.svg" width="35px"></a></li>
 				<li><a href="https://twitter.com/warthognetwork" target="_blank"><img src="/img/twitter.svg" width="35px"></a></li>
 			</ul>
-			<!-- <div id="header-links" class="flex">
-				
-				<a href="#main">MAIN</a>
-				<a href="https://wart.0xf10.com">GET START</a>
-				
-				<a href="https://github.com/CoinFuMasterShifu/ProofOfBalancedWork/blob/main/PoBW.pdf">ALGORITHM</a>
-				<a href="https://github.com/warthog-network/whitepaper/blob/master/whitepaper.md">WHITELIST</a>
-				<a href="#faqs">FAQs</a>
-				<a href="https://github.com/warthog-network"><img src="/img/github.svg" width="35px"></a>
-				<a href="https://discord.com/invite/QMDV8bGTdQ"><img src="/img/discord.svg" width="35px"></a>
-				<a href="https://t.me/warthognetwork"><img src="/img/telegram.svg" width="35px"></a>
-				<a href="https://twitter.com/warthognetwork"><img src="/img/twitter.svg" width="35px"></a>
-			</div> -->
 		</nav>
-		<div id="content" class="flex column">
+		<div id="content" class="flex column expand">
 			<div data-block="main" hidden>
 <div class="flex content-block right">
-	<img src="./img/logo.png" class="align_center" width="400px">
+	<img src="./img/logo.png" class="center" width="400px">
 	<div>
 		<h1>WHAT IS WARTHOG?</h1>
-		<span>Warthog is an experimental cryptocurrency with world's first <b class="shadow">Proof of Balanced Work</b> algorithm written by a group of crypto enthusiasts. This project is goes to be serious and everyone is welcome to join and contribute. Who knows how big this project will be?</span>
+		<span>Warthog is an experimental cryptocurrency with world's first <b class="lite shadow">Proof of Balanced Work</b> algorithm written by a group of crypto enthusiasts. This project is goes to be serious and everyone is welcome to join and contribute. Who knows how big this project will be?</span>
 	</div>
 </div>
 <div class="content-block flex left">
@@ -66,7 +53,7 @@
 		<h1>TOKENOMICS</h1>
 		<span>This is not the default kind of project where you see a disproportionately high allocation of the total supply unfairly reserved for the team, the advisors and their pockets. 0% is minted, premined, reserved for anyone, 100% is publicly mineable.</span>
 	</div>
-	<img src="/img/tokenomics.png" class="align_bottom" width="300px">
+	<img src="/img/tokenomics.png" class="bottom" width="300px">
 </div>
 <div class="content-block">
 	<h1>KEY FACTS</h1>
@@ -132,18 +119,18 @@
 </div>
 <div class="flex content-block lite around">
 	<div>
-		<h2 class="text-center">CHAIN SPEC</h2>
+		<h2 class="text center">CHAIN SPEC</h2>
 		<table class="borderless">
-			<tr><td>COIN UNIT</td><td>1 WART</td></tr>
-			<tr><td>BLOCK TIME</td><td>20 SECONDS</td></tr>
-			<tr><td>REWARD</td><td>3 WART</td></tr>
-			<tr><td>PRECISION</td><td>0.00000001 WART (8 digits)</td></tr>
-			<tr><td>HALVING</td><td>~ EVERY 2 YEARS</td></tr>
-			<tr><td>SUPPLY</td><td>18921599.68464 (~19M) WART</td></tr>
+			<tr><td>COIN UNIT</td><td class="text left">1 WART</td></tr>
+			<tr><td>BLOCK TIME</td><td class="text left">20 SECONDS</td></tr>
+			<tr><td>REWARD</td><td class="text left">3 WART</td></tr>
+			<tr><td>PRECISION</td><td class="text left">0.00000001 WART (8 digits)</td></tr>
+			<tr><td>HALVING</td><td class="text left">~ EVERY 2 YEARS</td></tr>
+			<tr><td>SUPPLY</td><td class="text left">18921599.68464 (~19M) WART</td></tr>
 		</table>
 	</div>
 	<div>
-		<h2 class="text-center">ROAD MAP</h2>
+		<h2 class="text center">ROAD MAP</h2>
 		<ul class="check-list">
 			<li class="check">Develop world's first PoBW algo</li>
 			<li>Develop stratum pool</li>
@@ -161,6 +148,15 @@
 
 			<div data-block="get-start" hidden>
 <div class="content-block">
+	<div class="flex around">
+		<h1>NODE</h1>
+		<h1>—</h1>
+		<h1>WALLET</h1>
+		<h1>—</h1>
+		<h1>MINING</h1>
+		<h1>—</h1>
+		<h1>POOL</h1>
+	</div>
 	<h2>NODE</h2>
 	<span>At the moment, for any actions on the Wartghot network, you need to run an instance of the node on your computer. Currently, the pre-compiled node executable file availabel for Windows, macOS (only arm), Linux (Ubuntu, Debian). You can download it from <a href="https://github.com/warthog-network/Warthog/releases" target="_blank">here</a>. Аfter launch, node will start synchronizing the blockchain, after it is completed, it will be possible to perform operations with the wallet and start mining.</span>
 	<pre>
@@ -274,18 +270,56 @@ Using 16 CPU threads for Verushash
 	<span>At the moment, the pool is under development, you can follow the development in more detail in <a href="https://discord.com/invite/QMDV8bGTdQ" target="_blank">Discord</a></span>
 </div>
 </div>
-			<div data-block="algo" hidden>
+			<div class="content-block expand p_t_0" data-block="algo" hidden>
+	<iframe src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/CoinFuMasterShifu/ProofOfBalancedWork/main/PoBW.pdf&embedded=true#zoom=FitH" frameborder="0" scrolling="auto"></iframe>
 
+	<!-- <canvas id="algo-pdf"></canvas>
+
+	<script src="/js/pdf.min.js" async></script>
+	<script>
+		(async () =>
+		{
+			var pdfUrl = '';
+
+			while(typeof pdfjsLib === 'undefined')
+			{
+				await new Promise(r => setTimeout(r, 1000));
+			}
+
+			pdfjsLib.GlobalWorkerOptions.workerSrc = '/js/pdf.worker.min.js';
+
+			
+
+			// mozilla/pdf.js/ba2edeae/examples/learning/helloworld.pdf
+
+			pdfjsLib.getDocument('https://raw.githubusercontent.com/CoinFuMasterShifu/ProofOfBalancedWork/main/PoBW.pdf').promise
+				.then((pdf) => pdf.getPage(1))
+				.then((page) =>
+				{
+					var scale = 1;
+					var viewport = page.getViewport({scale: scale});
+					var canvas = document.querySelector('#algo-pdf');
+					var context = canvas.getContext('2d');
+
+					// canvas.height = viewport.height;
+					// canvas.width = viewport.width;
+
+					var renderContext = { canvasContext: context, viewport: viewport };
+
+					page.render(renderContext);
+				});
+		})();
+	</script> -->
 </div>
 
 			<div data-block="whitelist" hidden>
-<div class="content-block flex column span-paragraph">
+<div class="content-block flex column span-paragraph bg_white shadow p_h_2em m_b_2em">
 	<h1>Warthog - An experimental fresh rewrite of a PoW cryptocurrency</h1>
 	<div class="flex around">
 		<h2>Pumbaa</h2>
 		<h2>Rafiki</h2>
 	</div>
-	<h2 class="text-center">October 5, 2023</h2>
+	<h2 class="text center">October 5, 2023</h2>
 	<h3>Abstract</h3>
 	<span>This white paper is a work in progress.</span>
 	<h2>1. Introduction and Project goals</h2>
@@ -449,8 +483,44 @@ Using 16 CPU threads for Verushash
 </div>
 </div>
 
-			<div data-block="faqs" hidden>
-
+			<div class="span-paragraph" data-block="faqs" hidden>
+	<div class="content-block flex column">
+		<h1>FAQs</h1>
+		<span><b>Q:</b> What's algorithm used in this project?</span>
+		<span><b>A:</b> The new algorithm is called "Janushash". More detailed information you can find here https://github.com/warthog-network/Warthog/blob/master/doc/janushash.md</span>
+	</div>
+	<div class="content-block flex column">
+		<span><b>Q:</b> Can I run mining on GPU or CPU only?</span>
+		<span><b>A:</b> No, you can't. Miner uses both GPU and CPU.</span>
+	</div>
+	<div class="content-block flex column">
+		<span><b>Q:</b> Where can I find the latest releases of the node+wallet and miner?</span>
+		<span><b>A:</b> You can find precompiled binaries of Node+Wallet: https://github.com/warthog-network/Warthog/releases<br>Miner (Linux and HiveOS builds): https://github.com/CoinFuMasterShifu/janusminer/releases<br>See README.md in these repos for usage information.</span>
+	</div>
+	<div class="content-block flex column">
+		<span><b>Q:</b> I'm getting this error in miner output:<br>
+			<pre>
+[error] API request failed. Are you running the node with RPC endpoint enabled?
+[warning] Could not get mining information, retrying in 100 milliseconds...</pre>
+		</span>
+		<span><b>A:</b> You should run node with `--rpc=0.0.0.0:3000` to accept remote connections from your rigs and prevent this error.<br>Keep in mind that you can only run one node per public IP.</span>
+	</div>
+	<div class="content-block flex column">
+		<span><b>Q:</b> Miner exits with error `custom exiter (exitcode=0), waiting to cooldown a bit`</span>
+		<span><b>A:</b> Probably your CPU is too old. The CPU must support these instructions: `'-mpclmul', '-msse4', '-msse4.1', '-msse4.2', '-mssse3', '-mavx', '-maes'`</span>
+	</div>
+	<div class="content-block flex column">
+		<span><b>Q:</b> What does `CPU queue full` and `CPU queue drained` mean?</span>
+		<span><b>A:</b> It means that there is an imbalance between CPU and GPU, this can happen sometimes but should not occur often. CPU queue drained can happen more often and is normal on each new block height. It should rebalance itself independent of how many threads you choose. Just look at the CPU load. If it is as specified everything is good. For example if you specify two threads two processor threads should be in use close to 100% . If that happens most of the time, everything is good. </span>
+	</div>
+	<div class="content-block flex column">
+		<span><b>Q:</b> What does `CPU outruns GPU` mean?</span>
+		<span><b>A:</b> GPU and CPU compute different hash functions so it can happen if GPU is slow and CPU fast.</span>
+	</div>
+	<div class="content-block flex column">
+		<span><b>Q:</b> My node stuck and won't sync?</span>
+		<span><b>A:</b> Make sure you are running the latest version `wart-node-linux --version`. Delete folder with node db files and start the node again. (It locates in home directory `~/.warthog` if you are using Linux and `%AppData%\Local\Warthog` in Windows)</span>
+	</div>
 </div>
 
 		</div>
@@ -460,6 +530,5 @@ Using 16 CPU threads for Verushash
 			</span>
 		</div>
 	</div>
-	<script src="./js/script.js"></script>
 </body>
 </html>
