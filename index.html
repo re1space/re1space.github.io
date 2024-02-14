@@ -1,176 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset='utf-8'>
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-		<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-		<title>Warthog Network</title>
-		<link href="./css/style.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		<div id="wrapper" class="flex column">
-			<nav id="header">
-				<div class="flex row between">
-					<img src="./img/main_logo.png" class="header__img-logo">
-					<label for="menu__btn-exp" class="header__img-menu" hidden><img src="/img/menu.svg"></label>
-				</div>
-				<div>
-					<input type="checkbox" id="menu__btn-exp" hidden>
-					<ul class="header__menu flex">
-						<li>
-							<input type="radio" id="menu-item__main" name="menu" checked>
-							<label for="menu-item__main" class="header__menu-item">MAIN</label>
-						</li>
-						<li>
-							<input type="radio" id="menu-item__get-started" name="menu">
-							<label for="menu-item__get-started" class="header__menu-item">GET&nbsp;STARTED</label>
-						</li>
-						<li>
-							<input type="radio" id="menu-item__algo" name="menu">
-							<label for="menu-item__algo" class="header__menu-item">ALGORITHM</label>
-						</li>
-						<li>
-							<input type="radio" id="menu-item__whitepaper" name="menu">
-							<label for="menu-item__whitepaper" class="header__menu-item">WHITEPAPER</label>
-						</li>
-						<li>
-							<input type="radio" id="menu-item__faqs" name="menu">
-							<label for="menu-item__faqs" class="header__menu-item">FAQs</label>
-						</li>
-						<li><a href="https://wart.0xf10.com" target="_blank" class="header__menu-item">EXPLORER</a></li>
-						<li>
-							<div class="flex row">
-								<a href="https://github.com/warthog-network" target="_blank" class="header__menu-item"><img src="/img/github.svg"></a>
-								<a href="https://discord.com/invite/QMDV8bGTdQ" target="_blank" class="header__menu-item"><img src="/img/discord.svg"></a>
-								<a href="https://t.me/warthognetwork" target="_blank" class="header__menu-item"><img src="/img/telegram.svg"></a>
-								<a href="https://twitter.com/warthognetwork" target="_blank" class="header__menu-item"><img src="/img/twitter.svg"></a>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div id="menu__mobile-exp" class="expand" hidden></div>
-			</nav>
-			<img src="./img/main_logo.png" class="header__img-logo opacity_0">
-			<div id="content" class="flex column expand">
-				<div data-block="main">
-<div class="flex content-block">
-	<img src="./img/logo.png" class="main-page__img-logo">
-	<div>
-		<h1>WHAT IS WARTHOG?</h1>
-		<span>Warthog is an experimental cryptocurrency with world's first <b class="lite shadow">Proof of Balanced Work</b> algorithm written by a group of crypto enthusiasts. This project is goes to be serious and everyone is welcome to join and contribute. Who knows how big this project will be?</span>
-	</div>
-</div>
-<div class="content-block flex">
-	<div>
-		<h1>TOKENOMICS</h1>
-		<span>This is not the default kind of project where you see a disproportionately high allocation of the total supply unfairly reserved for the team, the advisors and their pockets. 0% is minted, premined, reserved for anyone, 100% is publicly mineable.</span>
-	</div>
-	<img src="/img/tokenomics.png" class="main-page__img-tokenomics">
-</div>
-<div class="content-block">
-	<h1>KEY FACTS</h1>
-	<span>Remember the time when crypto was interesting and fun? We want to bring this golden age of crypto back to life.</span>
-	<div class="main-page__list-futures">
-		<div class="m_l_0">
-			<span class="text-icon">👍</span>
-			<div>
-				<h3>No Premine</h3>
-				<span>Project was fairly launched on Bitcointalk</span>
-			</div>
-		</div>
-		<div>
-			<span class="text-icon">🤟</span>
-			<div>
-				<h3>No "Team/Dev" fund</h3>
-				<span>No unfair allocation to anybody aka "team"/"development" funds</span>
-			</div>
-		</div>
-		<div>
-			<span class="text-icon">😊</span>
-			<div>
-				<h3>100% mineable</h3>
-				<span>100% of supply is publicly mineable, no coins were minted</span>
-			</div>
-		</div>
-		<div class="m_l_0">
-			<span class="text-icon">👑</span>
-			<div>
-				<h3>Written from scratch</h3>
-				<span>This project is NOT a fork/copy of anything else</span>
-			</div>
-		</div>
-		<div>
-			<span class="text-icon">✨</span>
-			<div>
-				<h3>Modern Codebase</h3>
-				<span>Using modern C++20 and tools like clangd, meson, ninja</span>
-			</div>
-		</div>
-		<div>
-			<span class="text-icon">🫵</span>
-			<div>
-				<h3>Open Source</h3>
-				<span>You are welcome to contribute</span>
-			</div>
-		</div>
-		<div>
-			<span class="text-icon">🔁</span>
-			<div>
-				<h3>Chain descriptor based sync</h3>
-				<span>Experimental new light-weight sync mechanism which requires less network communication and computational resources</span>
-			</div>
-		</div>
-		<div>
-			<span class="text-icon">⚡️</span>
-			<div>
-				<h3>Proof of Balanced Work</h3>
-				<span>The world's first algorithm using PoBW concept! Now power of CPU is also important!</span>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="flex content-block lite around">
-	<div>
-		<h2 class="text center">CHAIN SPEC</h2>
-		<table class="borderless">
-			<tr><td>COIN UNIT</td><td class="text left">1 WART</td></tr>
-			<tr><td>BLOCK TIME</td><td class="text left">20 SECONDS</td></tr>
-			<tr><td>REWARD</td><td class="text left">3 WART</td></tr>
-			<tr><td>PRECISION</td><td class="text left">0.00000001 WART (8 digits)</td></tr>
-			<tr><td>HALVING</td><td class="text left">~ EVERY 2 YEARS</td></tr>
-			<tr><td>SUPPLY</td><td class="text left">18921599.68464 (~19M) WART</td></tr>
-		</table>
-	</div>
-	<div>
-		<h2 class="text center">ROAD MAP</h2>
-		<ul class="check-list">
-			<li class="check">Develop world's first PoBW algo</li>
-			<li>Develop stratum pool</li>
-			<li>Listing on Exbitron</li>
-		</ul>
-	</div>
-</div>
-<div class="flex column content-block">
-	<h1>WANNA BUY?</h1>
-	<span>There is currently no listing on any exchange, but you can buy some WART on P2P thread on our Discord!</span>
-	<a class="button" href="https://discord.com/channels/1126486458698584107/1133081739816861716">BUY</a>
-</div>
-</div>
-
-				<div data-block="get-started" hidden>
-<div class="content-block">
-	<div class="flex around">
-		<h1>NODE</h1>
-		<h1>—</h1>
-		<h1>WALLET</h1>
-		<h1>—</h1>
-		<h1>MINING</h1>
-		<h1>—</h1>
-		<h1>POOL</h1>
-	</div>
-	<h2>NODE</h2>
-	<span>At the moment, for any actions on the Wartghot network, you need to run an instance of the node on your computer. Currently, the pre-compiled node executable file availabel for Windows, macOS (only arm), Linux (Ubuntu, Debian). You can download it from <a href="https://github.com/warthog-network/Warthog/releases" target="_blank">here</a>. Аfter launch, node will start synchronizing the blockchain, after it is completed, it will be possible to perform operations with the wallet and start mining.</span>
-	<pre>
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="icon" href="img/favicon.svg" type="image/svg+xml"><title>Warthog Network</title><link href="./css/style.css" rel="stylesheet" type="text/css"></head><body><div id="wrapper" class="flex column"><nav id="header"><div class="flex row between"><img src="./img/main_logo.png" class="header__img-logo"> <label for="menu__btn-exp" class="header__img-menu" hidden><img src="/img/menu.svg"></label></div><div><input type="checkbox" id="menu__btn-exp" hidden><ul class="header__menu flex"><li><input type="radio" id="menu-item__main" name="menu" checked="checked"> <label for="menu-item__main" class="header__menu-item">MAIN</label></li><li><input type="radio" id="menu-item__get-started" name="menu"> <label for="menu-item__get-started" class="header__menu-item">GET&nbsp;STARTED</label></li><li><input type="radio" id="menu-item__algo" name="menu"> <label for="menu-item__algo" class="header__menu-item">ALGORITHM</label></li><li><input type="radio" id="menu-item__whitepaper" name="menu"> <label for="menu-item__whitepaper" class="header__menu-item">WHITEPAPER</label></li><li><input type="radio" id="menu-item__faqs" name="menu"> <label for="menu-item__faqs" class="header__menu-item">FAQs</label></li><li><a href="https://wart.0xf10.com" target="_blank" class="header__menu-item">EXPLORER</a></li><li><div class="flex row"><a href="https://github.com/warthog-network" target="_blank" class="header__menu-item"><img src="/img/github.svg"></a><a href="https://discord.com/invite/QMDV8bGTdQ" target="_blank" class="header__menu-item"><img src="/img/discord.svg"></a><a href="https://t.me/warthognetwork" target="_blank" class="header__menu-item"><img src="/img/telegram.svg"></a><a href="https://twitter.com/warthognetwork" target="_blank" class="header__menu-item"><img src="/img/twitter.svg"></a></div></li></ul></div><div id="menu__mobile-exp" class="expand" hidden></div></nav><div class="p_v_10px opacity_0"><img src="./img/main_logo.png" class="header__img-logo"></div><div id="content" class="flex column expand"><div data-block="main"><div class="flex content-block"><img src="./img/logo.png" class="main-page__img-logo"><div><h1>WHAT IS WARTHOG?</h1><span>Warthog is an experimental cryptocurrency with world's first <b class="lite shadow">Proof of Balanced Work</b> algorithm written by a group of crypto enthusiasts. It is meant to be a community effort and everyone is more than welcome to join and contribute. Who knows how big this project will be?</span></div></div><div class="content-block flex"><div><h1>TOKENOMICS</h1><span>This is not the default kind of project where you see a disproportionately high allocation of the total supply unfairly reserved for the team, the advisors and their pockets. 0% is minted, premined, reserved for anyone, 100% is publicly mineable.</span></div><img src="/img/tokenomics.png" class="main-page__img-tokenomics"></div><div class="content-block"><h1>KEY FACTS</h1><span>Remember the time when crypto was interesting and fun? We want to bring this golden age of crypto back to life.</span><div class="main-page__list-futures"><div class="m_l_0"><span class="text-icon">👍</span><div><h3>No Premine</h3><span>Project was fairly launched on Bitcointalk</span></div></div><div><span class="text-icon">🤟</span><div><h3>No "Team/Dev" fund</h3><span>No unfair allocation to anybody aka "team"/"development" funds</span></div></div><div><span class="text-icon">😊</span><div><h3>100% mineable</h3><span>100% of supply is publicly mineable, no coins were minted</span></div></div><div class="m_l_0"><span class="text-icon">👑</span><div><h3>Written from scratch</h3><span>This project is NOT a fork/copy of anything else</span></div></div><div><span class="text-icon">✨</span><div><h3>Modern Codebase</h3><span>Using modern C++20 and tools like clangd, meson, ninja</span></div></div><div><span class="text-icon">🫵</span><div><h3>Open Source</h3><span>You are welcome to contribute</span></div></div><div><span class="text-icon">🔁</span><div><h3>Chain descriptor based sync</h3><span>Experimental new light-weight sync mechanism which requires less network communication and computational resources</span></div></div><div><span class="text-icon">⚡️</span><div><h3>Proof of Balanced Work</h3><span>The world's first algorithm using PoBW concept! Now power of CPU is also important!</span></div></div></div></div><div class="flex content-block lite around"><div><h2 class="text center">CHAIN SPEC</h2><table class="borderless"><tr><td>COIN UNIT</td><td class="text left">1 WART</td></tr><tr><td>BLOCK TIME</td><td class="text left">20 SECONDS</td></tr><tr><td>REWARD</td><td class="text left">3 WART</td></tr><tr><td>PRECISION</td><td class="text left">0.00000001 WART (8 digits)</td></tr><tr><td>HALVING</td><td class="text left">~ EVERY 2 YEARS</td></tr><tr><td>SUPPLY</td><td class="text left">18921599.68464 (~19M) WART</td></tr><tr><td>DIFFICULTY ADJUSTEMENT</td><td class="text left">EVERY 4 HOURS</td></tr></table></div><div><h2 class="text center">ROAD MAP</h2><ul class="check-list"><li class="check">Develop world's first PoBW algo</li><li>Develop stratum pool</li><li>Listing on Exbitron</li></ul></div></div><div class="flex column content-block"><h1>WANNA BUY?</h1><span>There is currently no listing on any exchange, but you can buy some WART on P2P thread on our Discord!</span> <a class="button" href="https://discord.com/channels/1126486458698584107/1133081739816861716">BUY</a></div></div><div data-block="get-started" hidden><div class="content-block"><div class="flex around"><h1>NODE</h1><h1>—</h1><h1>WALLET</h1><h1>—</h1><h1>MINING</h1><h1>—</h1><h1>POOL</h1></div><h2>NODE</h2><span>At the moment, for any actions on the Warthog network, you need to run an instance of the node on your computer. Currently, the pre-compiled node executable file availabel for Windows, macOS (only arm), Linux (Ubuntu, Debian). You can download it from <a href="https://github.com/warthog-network/Warthog/releases" target="_blank">here</a>. Аfter launch, node will start synchronizing the blockchain, after it is completed, it will be possible to perform operations with the wallet and start mining.</span><pre>
 ./wart-node
 
 [info] Warthog Node v0.1.19
@@ -184,45 +12,23 @@
 [info] RPC endpoint is 127.0.0.1:3000.
 [info] Connected to 1 peers
 [info] Connected to 14 peers
-[info] Syncing... (height 0 of 17280)</pre>
-</div>
-<div class="content-block">
-	<h2>WALLET</h2>
-	<span>To use a wallet, you need to download pre-compiled wallet executable file from <a href="https://github.com/warthog-network/Warthog/releases" target="_blank">here</a>. Currently support Windows, macOS (only arm), Linux (Ubuntu, Debian), but you can compile </span>
-	<h3>Create wallet</h3>
-	<span>To create the wallet you need just run next command:</span>
-	<br>
-	<pre>
-./wart-wallet -c</pre>
-	<span>In output you get wallet address, private and public keys. This information will be saved to the wallet.json file. </span>
-	<pre>
+[info] Syncing... (height 0 of 17280)</pre></div><div class="content-block"><h2>WALLET</h2><span>To use a wallet, you need to download pre-compiled wallet executable file from <a href="https://github.com/warthog-network/Warthog/releases" target="_blank">here</a>. Currently support Windows, macOS (only arm), Linux (Ubuntu, Debian), but you can compile</span><h3>Create wallet</h3><span>To create the wallet you need just run next command:</span><br><pre>
+./wart-wallet -c</pre><span>In output you get wallet address, private and public keys. This information will be saved to the wallet.json file.</span><pre>
 Wallet file created.
 {
    "address": "5fe016f874698e11f36a2b2f4dd759d53b55d5520c255e64",
    "privateKey": "2cc2cbe28cb665d540c949aef5d1a3484a960740338780ec82a9ae1414bcc18a",
    "publicKey": "0285a33afacea56262b44b8b96f4affa8f31cc51d3065eb37e43c0d0cf979a2872"
-}</pre>
-	<h3>Check balance</h3>
-	<span>If you want check your balance run command:</span>
-	<pre>
-./wart-wallet -b</pre>
-	<span>In output you get balance of your wallet</span>
-	<h3>Send coins</h3>
-	<span>To send some coins, use command:</span>
-	<pre>
-./wart-walet -s --to=%address% --amount %count% --fee 0</pre>
-	<pre>
-./wart-walet -s --to=9da0dc31d0c3bcaaeaf422be6499fbf451b314fa622be978 --amount 0.00000001 --fee 0</pre>
-	<span>Next, you will be shown the details of the transaction and if you agree with them, you need to confirm it</span>
-	<pre>
+}</pre><h3>Check balance</h3><span>If you want check your balance run command:</span><pre>
+./wart-wallet -b</pre><span>In output you get balance of your wallet</span><h3>Send coins</h3><span>To send some coins, use command:</span><pre>
+./wart-walet -s --to=%address% --amount %count% --fee 0</pre><pre>
+./wart-walet -s --to=9da0dc31d0c3bcaaeaf422be6499fbf451b314fa622be978 --amount 0.00000001 --fee 0</pre><span>Next, you will be shown the details of the transaction and if you agree with them, you need to confirm it</span><pre>
 Summary:
    To:     9da0dc31d0c3bcaaeaf422be6499fbf451b314fa622be978
    Fee:    0.00000001
    Amount: 0.00000001
    Nonce: 4262777042
-Confirm with "y": y</pre>
-	<span>And your transaction added to blockchain</span>
-	<pre>
+Confirm with "y": y</pre><span>And your transaction added to blockchain</span><pre>
 Get pin
 Got pin
 NonceId: 4262777042
@@ -239,25 +45,15 @@ pinHash: 2452592e211a10b97da31e4b681aafe49b93321776580278b0c39fc5bae84558
    "toAddr": "9929fdce19b2a71cf0950263baa71478ef1980f8c7d9ccb3"
 }
 =====================================
-Transaction accepted.</pre>
-	<h3>Restore</h3>
-	<span>To restore your wallet.json file, you need run command:</span>
-	<pre>
-./wart-wallet -r %your private key%</pre>
-	<span>In output you get wallet address, private and public keys and </span>
-	<pre>
+Transaction accepted.</pre><h3>Restore</h3><span>To restore your wallet.json file, you need run command:</span><pre>
+./wart-wallet -r %your private key%</pre><span>In output you get wallet address, private and public keys and</span><pre>
 ./wart-wallet -r 2cc2cbe28cb665d540c949aef5d1a3484a960740338780ec82a9ae1414bcc18a
 Wallet file created.
 {
    "address": "5fe016f874698e11f36a2b2f4dd759d53b55d5520c255e64",
    "privateKey": "2cc2cbe28cb665d540c949aef5d1a3484a960740338780ec82a9ae1414bcc18a",
    "publicKey": "0285a33afacea56262b44b8b96f4affa8f31cc51d3065eb37e43c0d0cf979a2872"
-}</pre>
-</div>
-<div class="content-block">
-	<h2>MINER</h2>
-	<span>To start mine this coin you need to download janusminer <a href="https://github.com/CoinFuMasterShifu/janusminer/releases" target="_blank">here</a>. Current stable version is <a href="https://github.com/CoinFuMasterShifu/janusminer/releases/tag/0.0.4" target="_blank">0.0.4</a>. Now miner have <b>ONLY Linux</b> support with OpenCL API.</span>
-	<pre>
+}</pre></div><div class="content-block"><h2>MINER</h2><span>To start mine this coin you need to download janusminer <a href="https://github.com/CoinFuMasterShifu/janusminer/releases" target="_blank">here</a>. Current stable version is <a href="https://github.com/CoinFuMasterShifu/janusminer/releases/tag/0.0.4" target="_blank">0.0.4</a>. Now miner have <b>ONLY Linux</b> support with OpenCL API.</span><pre>
 ./janusminer -a %wallet% -h %host_ip% -p %node_port%
 
 ./janusminer -a 5fe016f874698e11f36a2b2f4dd759d53b55d5520c255e64 -h 192.168.1.1 -p 3000
@@ -274,18 +70,7 @@ Using 16 CPU threads for Verushash
 [info]    Thread#0: 940.485000 kh/s
 ...
 [info]    Thread#15: 861.117000 kh/s
-[info] Janusscore: 72.634461 mh/s</pre>
-</div>
-<div class="content-block">
-	<h2>POOL</h2>
-	<span>At the moment, the pool is under development, you can follow the development in more detail in <a href="https://discord.com/invite/QMDV8bGTdQ" target="_blank">Discord</a></span>
-</div>
-</div>
-				<div class="content-block expand p_t_0" data-block="algo" hidden>
-	<div id='pdf-viewer'></div>
-	<script src="/js/pdf.min.js" async></script>
-	<script>
-		(async () =>
+[info] Janusscore: 72.634461 mh/s</pre></div><div class="content-block"><h2>POOL</h2><span>At the moment, the pool is under development, you can follow the development in more detail in <a href="https://discord.com/invite/QMDV8bGTdQ" target="_blank">Discord</a></span></div></div><div class="content-block expand p_t_0" data-block="algo" hidden><div id="pdf-viewer"></div><script src="/js/pdf.min.js" async></script><script>(async () =>
 		{
 			file = 'https://raw.githubusercontent.com/CoinFuMasterShifu/ProofOfBalancedWork/main/PoBW.pdf';
 
@@ -319,237 +104,13 @@ Using 16 CPU threads for Verushash
 					renderPage(pdf, page, canvas);
 				}
 			});
-		})();
-	</script>
-</div>
-
-				<div data-block="whitepaper" hidden>
-<div class="content-block flex column span-paragraph bg_white shadow p_h_2em m_b_2em">
-	<h1>Warthog - An experimental fresh rewrite of a PoW cryptocurrency</h1>
-	<div class="flex around">
-		<h2>Pumbaa</h2>
-		<h2>Rafiki</h2>
-	</div>
-	<h2 class="text center">October 5, 2023</h2>
-	<h3>Abstract</h3>
-	<span>This white paper is a work in progress.</span>
-	<h2>1. Introduction and Project goals</h2>
-	<span>Warthog is a classical Proof-of-Work (PoW) based cryptocurrency which is meant to be a fun and experimental side project of its developers Pumbaa, Timon and Rafiki who work in blockchain industry.</span>
-	<span>We are working on Warthog in our free time and there is always the risk that we leave due to time constraints or personal reasons. In fact our colleague Timon has already left the team. Therefore we are trying to build up a strong community backing the project.</span>
-	<span>Mainly one can describe this project as an experiment to try out new things and learn how blockchain technology works in detail. But at the same time we want to be as transparent and fair as possible and avoid as much as possible fishy and questionable practice currently seen in most other new projects.</span>
-	<span>The code is freshly written in C++20 and is not a cheap fork of any other project. Therefore there is always the risk of serious or unfixable bugs. But at the same time there is real effort put into this project which sets it apart from most competitors.</span>
-	<span>The community is welcome to take actively part in the evolution of Warthog, the logo and the explorer are made by volunteers and also possible choices for a mining algorithm are proposed. The connection with the community shall be preserved and extended in the future. If you want to join, please do so!</span>
-	<span>There is no specific purpose or use case of Warthog. However we want to revive the days when crypto was a fun and an interesting experimental thing. One of our experiments with this project is to use SQLite to store blocks and state. Another is the completely novel idea of syncing nodes via *chain descriptors* instead of asking other nodes for blocks by their hashes.</span>
-	<span>One design principle of Warthog is fast sync speed and a low impact on system resources which is achieved by the use of fast hashing algorithms, appropriate data structures and our custom-built sync algorithm.</span>
-	<span>For now and in the near future the primary plan is to make the node implemen- tation more robust and improve infrastructure like explorer and API for better interoperability.</span>
-
-	<h2>2. Technical Details</h2>
-	<h3>2.1 Retarget Logic</h3>
-	<span>Similarly to Bitcoin, the warthog blockchain will scale its difficulty periodically to adjust for changing hashrate. Changes in difficulty is partitioned into two phases: - In the initial phase the difficulty is adjusted every 720 blocks which corresponds to approximately 4 hours. - In the second phase the difficulty is adjusted every 8640 blocks which corresponds to 2 days.</span>
-	<span>The reason for this two-phase approach is the high variability of hashrate in early stages of a project’s life which initially requires a more frequent difficulty adjustment. On the other hand too short intervals also have disadvantages such as the tendency to oscillate and a possibly higher impact of faked timestamps. Therefore the second phase stretches the difficulty adjustment interval after the initial phase.</span>
-	<span>While in Bitcoin the difficulty change is capped by factor 4, we have implemented a factor 2 cap because our difficulty adjustment is more frequent than 2 weeks.</span>
-
-	<h3>2.2 Emission Scheme</h3>
-	<span>Warthog was started without any premined or reserved amount of coins on June 29, 2023. The project implements a classical halving-based emission scheme with halvings occurring every 3153600 blocks (every 2 years). The emission for the next 4 years is summarized in the following table:</span>
-	<div class="center">
-		<table>
-			<thead>
-				<tr><th colspan="3">Table 1: Emission overview</th></tr>
-				<tr><th>Date</th><th>Lifetime</th><th>% of total supply in circulation</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>June 29 2023</td><td>0 years</td><td>0%</td></tr>
-				<tr><td>June 29 2024</td><td>1 years</td><td>25%</td></tr>
-				<tr><td>June 29 2025</td><td>2 years</td><td>50%</td></tr>
-				<tr><td>June 29 2026</td><td>3 years</td><td>62.5%</td></tr>
-				<tr><td>June 29 2027</td><td>4 years</td><td>75%</td></tr>
-			</tbody>
-		</table>
-	</div>
-	<span>There is no tail emission which means there is a hard cap of the amount in circulation. The hard cap is 18921599.68464 WART (around 19 million coins).</span>
-	<span>Before halving occurs every block yields 3 WART as miner reward. Since the block time is 20 seconds, every day approximately 60/20 * 60 * 24 = 4320 blocks and 12960 WART are mined before halving.</span>
-
-	<h3>2.3 Coin Precision</h3>
-	<span>The reference implementation uses the C++ data type uint64_t for storing amounts of WART. This is a 64 bit unsigned integer. To represent fractions of a coin these values are interpreted in fixed point arithmetic with 8 digits precision. This means that 1 WART is internally represented as uint64_t number with value 100000000. The smallest representable step is 0.00000001 WART and represented as uint64_t number with value 1.</span>
-	<span>For easier integration all API endpoints return both, the WART amount as a string (like “"amount": "12.0"”), and the internal integer representation indicated with label “E8” (like “"amountE8": 1200000000”).</span>
-
-	<h3>2.4 One-of-a-kind chain descriptor based sync</h3>
-	<span>This project is an experiment where the developers try out new things and push the boundary of what is possible in blockchain technology. We invented a completely unique and new way of syncing nodes which is not presently not known to the industry.</span>
-	<span>Traditionally during synchronization new nodes request block bodies identified by block hashes. The replying node has to look up the block body based on the hash and then sends it back.</span>
-	<span>In contrast we have invented a node communication protocol which works with- out block hashes for block body lookup. In our setup nodes keep track on fork heights with other nodes. A *chain descriptor* is used to identify a specific chain on the peer. When a node appends to its chain, the chain descriptor remains unchanged, however the current chain descriptor is increased when the consensus chain switches to a longer fork. Block bodies for previous chains are also kept for some time in case a peer requests them.</span>
-	<span>When syncing nodes request block bodies identified by a chain descriptor and a block range. This way we avoid overhead in communication and lookup.</span>
-
-	<h3>2.5 SQLite backed block store</h3>
-	<span>SQLite is a battle-proven and well-established embedded SQL database engine. Warthog nodes use SQLite as their main storage engine for both, blocks and state. Nodes also index transactions and can provide basic blockchain explorer functionality directly via API thanks to SQLite.</span>
-	<span>SQLite databases are also portable across 32-bit and 64-bit machines and be- tween big-endian and little-endian architectures such that chain snapshots can easily shared. Furthermore SQLite supports transactions which are essential for data integrity even in case of a power outage or node crash.</span>
-	<span>The default SQLite database file name used for the chain is chain.db3 and can be configured via the --chain-db command line option</span>
-
-	<h3>2.6 Account based architecture</h3>
-	<span>Warthog implements an account based architecture. This is similar to Ethereum and different from Bitcoin’s UTXO model. Every account along with its balance is stored in the state table of the chain database. For efficiency reasons accounts are referred by their id: Every account is assigned a unique auto-incremented id value on first use. This makes blocks more space-efficient since a block id only requires 8 bytes of storage whereas an address would require 20 bytes.</span>
-
-	<h3>2.7 Anatomy of a block</h3>
-	<span>The binary content of a block is a concatenation of the following sections in their specified order:</span>
-	<ol type="1">
-		<li>Mining section</li>
-		<li>New address section</li>
-		<li>Reward section</li>
-		<li>Transfer section</li>
-	</ol>
-	<span>Below we describe the above sections. All numbers and id values are in network byte order.</span>
-
-	<h3>2.7.1 Mining section</h3>
-	<span>This section allows miners to put 4 bytes of arbitrary data to affect the merkle hash as shown in Table 2</span>
-	<div class="center">
-		<table>
-			<thead>
-				<tr><th colspan="2">Table 2: Mining section section byte<br>structure byte range content</th></tr>
-				<tr><th>byte range</th><th>content</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>1-4</td><td>arbitrary data</td></tr>
-			</tbody>
-		</table>
-	</div>
-
-	<h3>2.7.2 New address section</h3>
-	<span>This section lists new addresses that receive payments in this block and therefore need to be added to the state table. This way they will be assigned a new id value which is referenced in the other sections to specify a particular account. See Table 3.</span>
-	<div class="center">
-		<table>
-			<thead>
-				<tr><th colspan="2">Table 3: New address section byte structure</th></tr>
-				<tr><th>byte range</th><th>content</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>1-4</td><td>number n of new addresses</td></tr>
-				<tr><td>5-(4+n*20)</td><td>n addressess of 20 bytes each</td></tr>
-			</tbody>
-		</table>
-	</div>
-	<span>Miners are responsible to ensure that the addresses appearing in the new address section are <b>not already present in the state table</b> and are <b>actually referenced in this block</b>. Otherwise the block is considered invalid.</span>
-
-	<h3>2.7.3 Reward section</h3>
-	<span>Mining reward is distributed to at least one reward address consisting of 16 bytes each, see Tables 4 and 5</span>
-	<div class="center">
-		<table>
-			<thead>
-				<tr><th colspan="2">Table 4: Reward section byte structure</th></tr>
-				<tr><th>byte range</th><th>content</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>1-2</td><td>number r of reward entry</td></tr>
-				<tr><td>3-(4+r*16)</td><td>r reward entries</td></tr>
-			</tbody>
-		</table>
-	</div>
-	<div class="center">
-		<table>
-			<thead>
-				<tr><th colspan="2">Table 5: Reward element byte<br>structure byte range content</th></tr>
-				<tr><th>byte range</th><th>content</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>1-8</td><td>accountId</td></tr>
-				<tr><td>9-18</td><td>amount</td></tr>
-			</tbody>
-		</table>
-	</div>
-	<span>The sum of the amounts received by the addresses listed in the mining reward section must not exceed the total mining reward (block reward + transaction fees), otherwise the block is considered invalid.</span>
-	<span>The total size of the mining section is 2 + r ∗ 16 bytes.</span>
-
-	<h3>2.7.4 Transfer section</h3>
-	<span>The transfer section contains the transfers made in this block. Its binary outline is specified in Tables 6 and 7.</span>
-	<span>Each payment entry has length 99 bytes. Compare this to the average transaction size of around 200 bytes per Bitcoin transfer.</span>
-
-	<h3>2.8 Fee specification</h3>
-	<span>For efficiency and compactness transaction fees are encoded as 2-byte floating-point numbers (16 bits), where the first 6 bits encode the exponent and the remaining 10 bits encode a 11 bit mantissa starting with an implicit 1. This means that fee values cannot be 0 and are of lower precision than regular amount</span>
-	<div class="center">
-		<table>
-			<thead>
-				<tr><th colspan="2">Table 6: Transfer section byte structure</th></tr>
-				<tr><th>byte range</th><th>content</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>1-4</td><td>number t of transfer entries</td></tr>
-				<tr><td>5-(4+t*99)</td><td>t transfer entries, see Table 7</td></tr>
-			</tbody>
-		</table>
-	</div>
-	<div class="center">
-		<table>
-			<thead >
-				<tr><th colspan="2">Table 7: byte range</th></tr>
-				<tr><th>byte range</th><th>content</th></tr>
-			</thead>
-			<tbody>
-				<tr><td>1-8</td><td>fromAccountId</td></tr>
-				<tr><td>9-16</td><td>pinNonce</td></tr>
-				<tr><td>17-18</td><td>fee</td></tr>
-				<tr><td>19-26</td><td>toAccountId</td></tr>
-				<tr><td>27-34</td><td>amount</td></tr>
-				<tr><td>35-99</td><td>recoverable signature (65 bytes)</td></tr>
-			</tbody>
-		</table>
-	</div>
-	<span>values which use 4 bytes. A fee of value of 0 specified on transaction generation will automatically transform into the minimal fee value of 0.0000001 WART.</span>
-</div>
-</div>
-
-				<div class="span-paragraph" data-block="faqs" hidden>
-	<div class="content-block flex column">
-		<h1>FAQs</h1>
-		<span><b>Q:</b> What's algorithm used in this project?</span>
-		<span><b>A:</b> The new algorithm is called "Janushash". More detailed information you can find here https://github.com/warthog-network/Warthog/blob/master/doc/janushash.md</span>
-	</div>
-	<div class="content-block flex column">
-		<span><b>Q:</b> Can I run mining on GPU or CPU only?</span>
-		<span><b>A:</b> No, you can't. Miner uses both GPU and CPU.</span>
-	</div>
-	<div class="content-block flex column">
-		<span><b>Q:</b> Where can I find the latest releases of the node+wallet and miner?</span>
-		<span><b>A:</b> You can find precompiled binaries of Node+Wallet: https://github.com/warthog-network/Warthog/releases<br>Miner (Linux and HiveOS builds): https://github.com/CoinFuMasterShifu/janusminer/releases<br>See README.md in these repos for usage information.</span>
-	</div>
-	<div class="content-block flex column">
-		<span><b>Q:</b> I'm getting this error in miner output:<br>
-			<pre>
+		})();</script></div><div data-block="whitepaper" hidden><div class="content-block flex column span-paragraph bg_white shadow p_h_2em"><h1>Warthog - An experimental fresh rewrite of a PoW cryptocurrency</h1><div class="flex around"><h2>Pumbaa</h2><h2>Rafiki</h2></div><h2 class="text center">October 5, 2023</h2><h1>Warthog - An experimental fresh rewrite of a PoW cryptocurrency</h1><p><strong>Note</strong>: This white paper is a work in progress.</p><h2>Introduction and Project goals</h2><p>Warthog is a classical Proof-of-Work (PoW) based cryptocurrency which is meant to be a fun and experimental side project of its developers Pumbaa, Timon and Rafiki who work in blockchain industry.</p><p>We are working on Warthog in our free time and there is always the risk that we leave due to time constraints or personal reasons. In fact our colleague Timon has already left the team. Therefore we are trying to build up a strong community backing the project.</p><p>Mainly one can describe this project as an experiment to try out new things and learn how blockchain technology works in detail. But at the same time we want to be as transparent and fair as possible and avoid as much as possible fishy and questionable practice currently seen in most other new projects.</p><p>The code is freshly written in C++20 and is not a cheap fork of any other project. Therefore there is always the risk of serious or unfixable bugs. But at the same time there is real effort put into this project which sets it apart from most competitors.</p><p>The community is welcome to take actively part in the evolution of Warthog, the logo and the explorer are made by volunteers and also possible choices for a mining algorithm are proposed. The connection with the community shall be preserved and extended in the future. If you want to join, please do so!</p><p>There is no specific purpose or use case of Warthog. However we want to revive the days when crypto was a fun and an interesting experimental thing. One of our experiments with this project is to use SQLite to store blocks and state. Another is the completely novel idea of syncing nodes via <em>chain descriptors</em> instead of asking other nodes for blocks by their hashes.</p><p>One design principle of Warthog is fast sync speed and a low impact on system resources which is achieved by the use of fast hashing algorithms, appropriate data structures and our custom-built sync algorithm.</p><p>For now and in the near future the primary plan is to make the node implementation more robust and improve infrastructure like explorer and API for better interoperability.</p><h2>Technical Details</h2><h3>Retarget Logic</h3><p>Similarly to Bitcoin, the warthog blockchain will scale its difficulty periodically to adjust for changing hashrate. Changes in difficulty is partitioned into two phases:</p><ul><li>In the initial phase the difficulty is adjusted every 720 blocks which corresponds to approximately 4 hours.</li><li>In the second phase the difficulty is adjusted every 8640 blocks which corresponds to 2 days.</li></ul><p>The reason for this two-phase approach is the high variability of hashrate in early stages of a project&apos;s life which initially requires a more frequent difficulty adjustment. On the other hand too short intervals also have disadvantages such as the tendency to oscillate and a possibly higher impact of faked timestamps. Therefore the second phase stretches the difficulty adjustment interval after the initial phase.</p><p>While in Bitcoin the difficulty change is capped by factor 4, we have implemented a factor 2 cap because our difficulty adjustment is more frequent than 2 weeks.</p><h3>Emission Scheme</h3><p>Warthog was started without any premined or reserved amount of coins on June 29, 2023. The project implements a classical halving-based emission scheme with halvings occurring every 3153600 blocks (every 2 years). The emission for the next 4 years is summarized in the following table:</p><table style="margin: 0 auto;"><thead><tr><th>Date</th><th>Lifetime</th><th>% of total supply in circulation</th></tr></thead><tbody><tr><td>June 29 2023</td><td>0 years</td><td>0%</td></tr><tr><td>~June 29 2024</td><td>1 years</td><td>25%</td></tr><tr><td>~June 29 2025</td><td>2 years</td><td>50%</td></tr><tr><td>~June 29 2026</td><td>3 years</td><td>62.5%</td></tr><tr><td>~June 29 2027</td><td>4 years</td><td>75%</td></tr></tbody></table><p>There is no tail emission which means there is a hard cap of the amount in circulation. The hard cap is 18921599.68464 WART (around 19 million coins).</p><p>Before halving occurs every block yields 3 WART as miner reward. Since the block time is 20 seconds, every day approximately 60/20 * 60 * 24 = 4320 blocks and 12960 WART are mined before halving.</p><h3>Coin Precision</h3><p>The reference implementation uses the C++ data type <code>uint64_t</code> for storing amounts of WART. This is a 64 bit unsigned integer. To represent fractions of a coin these values are interpreted in fixed point arithmetic with 8 digits precision. This means that 1 WART is internally represented as <code>uint64_t</code> number with value 100000000. The smallest representable step is 0.00000001 WART and represented as <code>uint64_t</code> number with value 1.</p><p>For easier integration all API endpoints return both, the WART amount as a string (like <code>&quot;amount&quot;: &quot;12.0&quot;</code>), and the internal integer representation indicated with label &quot;<code>E8</code>&quot; (like <code>&quot;amountE8&quot;: 1200000000</code>).</p><h3>One-of-a-kind chain descriptor based sync</h3><p>This project is an experiment where the developers try out new things and push the boundary of what is possible in blockchain technology. We invented a completely unique and new way of syncing nodes which is not presently not known to the industry.</p><p>Traditionally during synchronization new nodes request block bodies identified by block hashes. The replying node has to look up the block body based on the hash and then sends it back.</p><p>In contrast we have invented a node communication protocol which works without block hashes for block body lookup. In our setup nodes keep track on fork heights with other nodes. A <em>chain descriptor</em> is used to identify a specific chain on the peer. When a node appends to its chain, the chain descriptor remains unchanged, however the current chain descriptor is increased when the consensus chain switches to a longer fork. Block bodies for previous chains are also kept for some time in case a peer requests them.</p><p>When syncing nodes request block bodies identified by a chain descriptor and a block range. This way we avoid overhead in communication and lookup.</p><h3>SQLite backed block store</h3><p>SQLite is a battle-proven and well-established embedded SQL database engine. Warthog nodes use SQLite as their main storage engine for both, blocks and state. Nodes also index transactions and can provide basic blockchain explorer functionality directly via API thanks to SQLite.</p><p>SQLite databases are also portable across 32-bit and 64-bit machines and between big-endian and little-endian architectures such that chain snapshots can easily shared. Furthermore SQLite supports transactions which are essential for data integrity even in case of a power outage or node crash.</p><p>The default SQLite database file name used for the chain is <code>chain.db3</code> and can be configured via the <code>--chain-db</code> command line option</p><h3>Account based architecture</h3><p>Warthog implements an account based architecture. This is similar to Ethereum and different from Bitcoin&apos;s UTXO model. Every account along with its balance is stored in the <code>State</code> table of the chain database. For efficiency reasons accounts are referred by their id: Every account is assigned a unique auto-incremented id value on first use. This makes blocks more space-efficient since a block id only requires 8 bytes of storage whereas an address would require 20 bytes.</p><h3>Anatomy of a block</h3><p>The binary content of a block is a concatenation of the following sections in their specified order:</p><ol><li>Mining section</li><li>New address section</li><li>Reward section</li><li>Transfer section</li></ol><p>Below we describe the above sections. All numbers and id values are in network byte order.</p><h4>Mining section</h4><p>This section allows miners to put 4 bytes of arbitrary data to affect the merkle hash.</p><table style="margin: 0 auto;"><thead><tr><th>byte range</th><th>content</th></tr></thead><tbody><tr><td>1-4</td><td>arbitrary data</td></tr></tbody></table><h4>New address section</h4><p>This section lists new addresses that receive payments in this block and therefore need to be added to the <code>state</code> table. This way they will be assigned a new id value which is referenced in the other sections to specify a particular account.</p><table style="margin: 0 auto;"><thead><tr><th>byte range</th><th>content</th></tr></thead><tbody><tr><td>1-4</td><td>number <code>n</code> of new addresses</td></tr><tr><td>5-(4+n*20)</td><td><code>n</code> addressess of 20 bytes each</td></tr></tbody></table><p>Miners are responsible to ensure that the addresses appearing in the new address section are <strong>not already present in the state table</strong> and <strong>are actually referenced in this block</strong>. Otherwise the block is considered invalid.</p><h4>Reward section</h4><p>Mining reward is distributed to at least one reward address.</p><table style="margin: 0 auto;"><thead><tr><th>byte range</th><th>content</th></tr></thead><tbody><tr><td>1-2</td><td>number <code>r</code> of reward entry</td></tr><tr><td>3-(4+r*16)</td><td><code>r</code> reward entries</td></tr></tbody></table><p>Every reward entry consists of 16 bytes:</p><table style="margin: 0 auto;"><thead><tr><th>byte range</th><th>content</th></tr></thead><tbody><tr><td>1-8</td><td>accountId</td></tr><tr><td>9-16</td><td>amount</td></tr></tbody></table><p>The sum of the amounts received by the addresses listed in the mining reward section must not exceed the total mining reward (block reward + transaction fees), otherwise the block is considered invalid.</p><p>The total size of the mining section is 2+ <code>r</code>*16 bytes.</p><h4>Transfer section</h4><p>The transfer section contains the transfers made in this block. Its binary outline is as follows:</p><table style="margin: 0 auto;"><thead><tr><th>byte range</th><th>content</th></tr></thead><tbody><tr><td>1-4</td><td>number <code>t</code>of transfer entries</td></tr><tr><td>5-(4+t*99)</td><td><code>t</code> transfer entries</td></tr></tbody></table><p>Every transfer entry has the following structure:</p><table style="margin: 0 auto;"><thead><tr><th>byte range</th><th>content</th></tr></thead><tbody><tr><td>1-8</td><td>fromAccountId</td></tr><tr><td>9-16</td><td>pinNonce</td></tr><tr><td>17-18</td><td>fee</td></tr><tr><td>19-26</td><td>toAccountId</td></tr><tr><td>27-34</td><td>amount</td></tr><tr><td>35-99</td><td>recoverable signature (65 bytes)</td></tr></tbody></table><p>Each payment entry has length 99 bytes. Compare this to the average transaction size of around 200 bytes per Bitcoin transfer.</p><h3>Fee specification</h3><p>For efficiency and compactness transaction fees are encoded as 2-byte floating-point numbers (16 bits), where the first 6 bits encode the exponent and the remaining 10 bits encode a 11 bit mantissa starting with an implicit 1. This means that fee values cannot be 0 and are of lower precision than regular amount values which use 4 bytes. A fee of value of <code>0</code> specified on transaction generation will automatically transform into the minimal fee value of <code>0.0000001 WART</code>.</p><h2>Project Links</h2><ul><li><a href="https://bitcointalk.org/index.php?topic=5458046.0">Bitcointalk</a></li><li><a href="https://github.com/ByPumbaa/Warthog">GitHub</a></li><li><a href="https://discord.gg/QMDV8bGTdQ">Discord</a></li><li><a href="https://warthog.network">Website</a></li><li><a href="https://wart.0xf10.com/">Explorer</a></li></ul></div></div><div class="span-paragraph" data-block="faqs" hidden><div class="content-block flex column"><h1>FAQs</h1><span><b>Q:</b> What's algorithm used in this project?</span> <span><b>A:</b> The new algorithm is called "Janushash". More detailed information you can find here https://github.com/warthog-network/Warthog/blob/master/doc/janushash.md</span></div><div class="content-block flex column"><span><b>Q:</b> Can I run mining on GPU or CPU only?</span> <span><b>A:</b> No, you can't. Miner uses both GPU and CPU.</span></div><div class="content-block flex column"><span><b>Q:</b> Where can I find the latest releases of the node+wallet and miner?</span> <span><b>A:</b> You can find precompiled binaries of Node+Wallet: https://github.com/warthog-network/Warthog/releases<br>Miner (Linux and HiveOS builds): https://github.com/CoinFuMasterShifu/janusminer/releases<br>See README.md in these repos for usage information.</span></div><div class="content-block flex column"><span><b>Q:</b> I'm getting this error in miner output:<br><pre>
 [error] API request failed. Are you running the node with RPC endpoint enabled?
-[warning] Could not get mining information, retrying in 100 milliseconds...</pre>
-		</span>
-		<span><b>A:</b> You should run node with `--rpc=0.0.0.0:3000` to accept remote connections from your rigs and prevent this error.<br>Keep in mind that you can only run one node per public IP.</span>
-	</div>
-	<div class="content-block flex column">
-		<span><b>Q:</b> Miner exits with error `custom exiter (exitcode=0), waiting to cooldown a bit`</span>
-		<span><b>A:</b> Probably your CPU is too old. The CPU must support these instructions: `'-mpclmul', '-msse4', '-msse4.1', '-msse4.2', '-mssse3', '-mavx', '-maes'`</span>
-	</div>
-	<div class="content-block flex column">
-		<span><b>Q:</b> What does `CPU queue full` and `CPU queue drained` mean?</span>
-		<span><b>A:</b> It means that there is an imbalance between CPU and GPU, this can happen sometimes but should not occur often. CPU queue drained can happen more often and is normal on each new block height. It should rebalance itself independent of how many threads you choose. Just look at the CPU load. If it is as specified everything is good. For example if you specify two threads two processor threads should be in use close to 100% . If that happens most of the time, everything is good. </span>
-	</div>
-	<div class="content-block flex column">
-		<span><b>Q:</b> What does `CPU outruns GPU` mean?</span>
-		<span><b>A:</b> GPU and CPU compute different hash functions so it can happen if GPU is slow and CPU fast.</span>
-	</div>
-	<div class="content-block flex column">
-		<span><b>Q:</b> My node stuck and won't sync?</span>
-		<span><b>A:</b> Make sure you are running the latest version `wart-node-linux --version`. Delete folder with node db files and start the node again. (It locates in home directory `~/.warthog` if you are using Linux and `%AppData%\Local\Warthog` in Windows)</span>
-	</div>
-</div>
-
-			</div>
-			<div id="footer" class="flex">
-				<span class="text center">
-					Copyright © WartHog 2024 Website Design by re. Logo by BalkyBot.
-				</span>
-			</div>
-			<script>
-				let menu_btn = document.querySelector('#menu__btn-exp');
+[warning] Could not get mining information, retrying in 100 milliseconds...</pre></span><span><b>A:</b> You should run node with `--rpc=0.0.0.0:3000` to accept remote connections from your rigs and prevent this error.<br>Keep in mind that you can only run one node per public IP.</span></div><div class="content-block flex column"><span><b>Q:</b> Miner exits with error `custom exiter (exitcode=0), waiting to cooldown a bit`</span> <span><b>A:</b> Probably your CPU is too old. The CPU must support these instructions: `'-mpclmul', '-msse4', '-msse4.1', '-msse4.2', '-mssse3', '-mavx', '-maes'`</span></div><div class="content-block flex column"><span><b>Q:</b> What does `CPU queue full` and `CPU queue drained` mean?</span> <span><b>A:</b> It means that there is an imbalance between CPU and GPU, this can happen sometimes but should not occur often. CPU queue drained can happen more often and is normal on each new block height. It should rebalance itself independent of how many threads you choose. Just look at the CPU load. If it is as specified everything is good. For example if you specify two threads two processor threads should be in use close to 100% . If that happens most of the time, everything is good.</span></div><div class="content-block flex column"><span><b>Q:</b> What does `CPU outruns GPU` mean?</span> <span><b>A:</b> GPU and CPU compute different hash functions so it can happen if GPU is slow and CPU fast.</span></div><div class="content-block flex column"><span><b>Q:</b> My node stuck and won't sync?</span> <span><b>A:</b> Make sure you are running the latest version `wart-node-linux --version`. Delete folder with node db files and start the node again. (It locates in home directory `~/.warthog` if you are using Linux and `%AppData%\Local\Warthog` in Windows)</span></div></div></div><div id="footer" class="flex"><span class="text center">Copyright © Warthog 2024 Website Design by re. Logo by BalkyBot.</span></div><script>let menu_btn = document.querySelector('#menu__btn-exp');
 				let menu_exp_close = document.querySelector('#menu__mobile-exp');
 				let menu = document.querySelectorAll('[name=menu]');
 				let wrapper = document.querySelector('#wrapper');
 				let blocks = document.querySelectorAll('[data-block]');
 				menu_exp_close.addEventListener('click', e => menu_btn.checked = false);
 				const onMenuItemClick = (e) => blocks.forEach((block) => { block.hidden = true; if (e.target.id.includes(block.dataset.block)) { block.hidden = false; menu_btn.checked = false; wrapper.scrollTop = 0; } });
-				menu.forEach(item => item.addEventListener('click', onMenuItemClick));
-			</script>
-		</div>
-	</body>
-</html>
+				menu.forEach(item => item.addEventListener('click', onMenuItemClick));</script></div></body></html>
