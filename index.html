@@ -316,12 +316,28 @@
 
 		#settings-container input[type="number"]
 		{
-			width: 70px;
+			width: 60px;
 			padding: 8px;
 			margin: auto 0;
 			border: 1px solid #ccc;
 			border-radius: 4px;
 			box-sizing: border-box;
+			font-size: unset;
+			text-align: center;
+		}
+
+		/* Chrome, Safari, Edge, Opera */
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button
+		{
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		/* Firefox */
+		input[type=number]
+		{
+			-moz-appearance: textfield;
 		}
 
 		#settings-container input[type="checkbox"]
@@ -331,12 +347,14 @@
 
 		#settings-container button
 		{
-			margin-top: 10px;
-			padding: 8px 12px;
+			width: 45%;
+			/* margin: 0 10px; */
+			padding: 10px 15px;
 			color: white;
 			border: none;
 			cursor: pointer;
 			border-radius: 4px;
+			font-size: unset;
 		}
 
 		#settings-container button.green
@@ -357,6 +375,13 @@
 		#settings-container button.red:hover
 		{
 			background-color: #863a3ab4;
+		}
+
+		.buttons-wrapper
+		{
+			display: flex;
+			margin-top: 40px;
+			justify-content: space-between;
 		}
 
 		#overlay
@@ -494,7 +519,7 @@
 			
 
 			<label for="purple-os-important">
-				<p>Фиолетовый SO важнее<br>предыдущих настроек?:</p>
+				<p>Фиолетовый SO важнее<br>предыдущих настроек:</p>
 				<label class="switch">
 					<input type="checkbox" id="purple-os-important" checked>
 					<span class="slider round"></span>
@@ -502,15 +527,17 @@
 			</label>
 
 			<label for="power-important">
-				<p>Длина последовательности<br>важнее предыдущих настроек?:</p>
+				<p>Длина последовательности<br>важнее предыдущих настроек:</p>
 				<label class="switch">
 					<input type="checkbox" id="power-important" checked>
 					<span class="slider round"></span>
 				</label>
 			</label>
 
-			<button id="save-settings" class="green" style="margin-top: 40px;">Save</button>
-			<button id="close-settings" class="red">Close</button>
+			<div class="buttons-wrapper">
+				<button id="close-settings" class="red">Close</button>
+				<button id="save-settings" class="green">Save</button>
+			</div>
 		</div>
 	</div>
 	<div id="overlay"></div>
