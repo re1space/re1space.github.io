@@ -535,6 +535,10 @@
 			</label>
 
 			<div class="buttons-wrapper">
+				<button id="settings__btn-reset" class="red" style="width: 80%; margin: auto;">Сбросить кеш и настройки</button>
+			</div>
+
+			<div class="buttons-wrapper">
 				<button id="close-settings" class="red">Close</button>
 				<button id="save-settings" class="green">Save</button>
 			</div>
@@ -558,6 +562,7 @@
 		const settingsContainer = document.getElementById('settings-container');
 		const closeSettingsButton = document.getElementById('close-settings');
 		const saveSettingsButton = document.getElementById('save-settings');
+		const btnSettingsReset = document.querySelector('#settings__btn-reset');
 		const overlay = document.getElementById('overlay');
 
 		const payoutPercentageInput = document.getElementById('payout-percentage');
@@ -575,7 +580,7 @@
 			show_inds: true,
 			show_emoji: true,
 			is_power_important: true,
-			is_os_important: true
+			is_os_important: false
 		};
 
 		const savedSettings = localStorage.getItem('filterSettings');
@@ -618,7 +623,7 @@
 
 				try
 				{
-					_data_last = JSON.parse(event.data)
+					_data_last = JSON.parse(event.data).sort((a, b) => b.meta.length - a.meta.length)
 					updateDataList(_data_last);
 					_timer_data = setTimeout(() => window.location.reload(true), 65 * 1000)
 				}
@@ -659,21 +664,25 @@
 		{
 			const seq = (data) => `
 				<div class="sequence__info-main">
-					<span>${data.type == 1 ? '🟢' : '🔴'}</span>
-					<span>${data.name}</span>
+					<span>${data.direction == 1 ? '🟢' : '🔴'}</span>
+					<span>${data.asset}</span>
 					<span class="bold">${data.payout}%</span>
 					<span>${data.count}</span>
 					<span>${data.emoji}</span>
-					<span>${data.power}%</span>
+					<span>${data.meta.length}%</span>
 				</div>`;
 
-			const seq_sub_is_needle = (data) => settings.show_inds && (data.power >= 65 || (data.emoji != '' && (data.indicators.rsi || data.indicators.macd || data.indicators.ao || data.indicators.so > 0)));
+			const seq_sub_is_needle = (data) => settings.show_inds && (data.meta.length >= 65 || (settings.is_os_important && data.meta.so == 2) || data.meta.impuls > 0 || (data.emoji != '' && (data.meta.rsi || data.meta.macd || data.meta.ao || data.meta.trend || data.meta.so > 0)));
 			const seq_sub = (data) =>
 				`<div class="sequence__info-inds">
-					<span class="${data.indicators.rsi ? 'green' : 'grey'}">RSI</span>
-					<span class="${data.indicators.macd ? 'green' : 'grey'}">MACD</span>
-					<span class="${data.indicators.ao ? 'green' : 'grey'}">AO</span>
-					<span class="${data.indicators.so == 1 ? 'green' : ( data.indicators.so == 2 ? 'purple' : 'grey')}">SO</span>
+					<span class="${data.meta.rsi == 1 ? 'green' : ( data.meta.rsi == 2 ? 'purple' : 'grey')}">RSI</span>
+					<span class="${data.meta.macd ? 'green' : 'grey'}">MACD</span>
+					<!-- span class="${data.meta.ao ? 'green' : 'grey'}">AO</span -->
+					<!-- span class="${data.meta.trend ? 'green' : 'grey'}">TREND</span -->
+					<!-- span class="${data.meta.bb ? 'green' : 'grey'}">BB</span -->
+					<span class="${data.meta.impuls == 1 ? 'green' : ( data.meta.impuls == 2 ? 'purple' : 'grey')}">IMPULS</span>
+					<span class="${data.meta.so == 1 ? 'green' : ( data.meta.so == 2 ? 'purple' : 'grey')}">SO</span>
+
 				</div>`;
 
 			if (!Array.isArray(data))
@@ -688,13 +697,13 @@
 			let hidden = 0;
 			data.forEach(item => {
 				const listItem = document.createElement("li");
-				if (item.power >= 90) listItem.classList.add("hightlight");
+				if (item.meta.length >= 90) listItem.classList.add("hightlight");
 				if (
-					(item.power < settings.power
+					(item.meta.length < settings.power
 					|| item.count < settings.count
 					|| item.payout < settings.payout)
-						&& ! (settings.is_os_important && item.indicators.so.so == 2)
-						&& ! (settings.is_power_important && item.power >= settings.power))
+						&& ! (settings.is_os_important && item.meta.so == 2)
+						&& ! (settings.is_power_important && item.meta.length >= settings.power))
 				{
 					hidden++;
 					return;
@@ -807,6 +816,15 @@
 			overlay.style.display = 'none';
 		};
 
+		const resetSettings = () =>
+		{
+			if (confirm("Сбросить все настройки и кеш?"))
+			{
+				localStorage.clear();
+				location.reload(true);
+			}
+		};
+
 		document.addEventListener("DOMContentLoaded", () =>
 		{
 			console.log("Telegram WebApp initialized.");
@@ -816,6 +834,7 @@
 			settingsButton.addEventListener('click', showSettings);
 			saveSettingsButton.addEventListener('click', saveSettings);
 			closeSettingsButton.addEventListener('click', hideSettings);
+			btnSettingsReset.addEventListener('click', resetSettings);
 			overlay.addEventListener('click', hideSettings);
 		});
 	</script>
