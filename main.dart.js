@@ -15877,7 +15877,8 @@ k=e}}l=f}m=h}}if(j){if(n)p=o
 else{j=s?q:b
 o=(j==null?p.a(j):j).b
 p=o}A.bu(p)
-p=new A.at(Math.max(A.fl(m),A.fl(k)),Math.max(A.fl(l),p))
+a=new A.at(Math.max(A.fl(m),A.fl(k)),Math.max(A.fl(l),p))
+p=a
 break $label0$0}p=d}return p},
 aFy(a,b,c,d,e,f,g,h,i){var s,r=null,q=A.af(),p=J.ato(4,t.iy)
 for(s=0;s<4;++s)p[s]=new A.Af(r,B.aX,B.a9,B.a1.j(0,B.a1)?new A.id(1):B.a1,r,r,r,r,B.aq,r)
@@ -24164,49 +24165,48 @@ if(b!==s.a.get(a))throw A.f(A.ik("Platform interfaces must not be implemented wi
 a6b:function a6b(){},
 UG(){var s=0,r=A.N(t.z),q,p,o
 var $async$UG=A.J(function(a,b){if(a===1)return A.K(b,r)
-while(true)switch(s){case 0:A.aqt()
-s=2
+while(true)switch(s){case 0:s=2
 return A.T(A.aac(),$async$UG)
-case 2:q=b
+case 2:o=b
 if($.ER.b!==$.ER)A.a2(A.aE_($.ER.a))
-$.ER.b=q
-q=new A.aa1(null)
-q.JM("filterSettings",$.ER.aU(),null)
-p=q.b
-p===$&&A.a()
-o=p.h(0,"payout")
-q.e=o==null?q.e:o
-o=p.h(0,"count")
-q.f=o==null?q.f:o
-o=p.h(0,"length")
-q.r=o==null?q.r:o
-o=p.h(0,"showEmojis")
-q.w=o==null?q.w:o
-o=p.h(0,"showIndicators")
-q.x=o==null?q.x:o
-o=p.h(0,"isLengthImportant")
-q.y=o==null?q.y:o
-p=p.h(0,"isImpulsImportant")
-q.z=p==null?q.z:p
-$.amG.b=q
-q=$.ER.aU()
+$.ER.b=o
+o=new A.aa1(null)
+o.JM("filterSettings",$.ER.aU(),null)
+q=o.b
+q===$&&A.a()
+p=q.h(0,"payout")
+o.e=p==null?o.e:p
+p=q.h(0,"count")
+o.f=p==null?o.f:p
+p=q.h(0,"length")
+o.r=p==null?o.r:p
+p=q.h(0,"showEmojis")
+o.w=p==null?o.w:p
+p=q.h(0,"showIndicators")
+o.x=p==null?o.x:p
+p=q.h(0,"isLengthImportant")
+o.y=p==null?o.y:p
+q=q.h(0,"isImpulsImportant")
+o.z=q==null?o.z:q
+$.amG.b=o
+o=$.ER.aU()
 s=3
 return A.T(A.a5T(),$async$UG)
-case 3:p=b
-o=new A.VH(null)
-o.JM("appSettings",q,null)
-if(o.gVi().length!==0)o.gVi()
-q=p.c
-p=o.b
-p===$&&A.a()
-p.m(0,"version",q)
-o.qH()
-o.qH()
-$.EQ.b=o
-if($.EQ.aU().gUZ()!=="none"){q=$.EQ.aU().gUZ()
-if(q==="light")q=B.cl
-else q=q==="dark"?B.dD:B.cV
-$.UF=q}else $.UF=$.ar7()
+case 3:q=b
+p=new A.VH(null)
+p.JM("appSettings",o,null)
+if(p.gVi().length!==0)p.gVi()
+o=q.c
+q=p.b
+q===$&&A.a()
+q.m(0,"version",o)
+p.qH()
+p.qH()
+$.EQ.b=p
+if($.EQ.aU().gUZ()!=="none"){o=$.EQ.aU().gUZ()
+if(o==="light")o=B.cl
+else o=o==="dark"?B.dD:B.cV
+$.UF=o}else $.UF=$.ar7()
 return A.L(null,r)}})
 return A.M($async$UG,r)},
 aqt(){var s,r=$.aqr
@@ -25528,7 +25528,7 @@ A.alN.prototype={
 $1(a){var s=A.e0().b
 if(s==null)s=null
 else{s=s.canvasKitBaseUrl
-if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/cf56914b326edb0ccb123ffdc60f00060bd513fa/":s)+a},
+if(s==null)s=null}return(s==null?"canvaskit/":s)+a},
 $S:66}
 A.WD.prototype={
 dl(){B.d.ai(this.a.a.save())},
@@ -80071,6 +80071,7 @@ return new A.Dg(A.b([],s),A.b([],s))}}
 A.Dg.prototype={
 av(){var s,r=this
 r.d=$.amG.aU()
+A.aqt()
 r.aM()
 $.axo=new A.ajU(r)
 r.d.d=new A.ajV(r)
@@ -87601,4 +87602,3 @@ return}var s=document.scripts
 function onLoad(b){for(var q=0;q<s.length;++q){s[q].removeEventListener("load",onLoad,false)}a(b.target)}for(var r=0;r<s.length;++r){s[r].addEventListener("load",onLoad,false)}})(function(a){v.currentScript=a
 var s=A.ang
 if(typeof dartMainRunner==="function"){dartMainRunner(s,[])}else{s([])}})})()
-//# sourceMappingURL=main.dart.js.map
